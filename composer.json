@@ -1,0 +1,11 @@
+{
+    "name": "assu-conseil/site",
+    "description": "Site web Assu-Conseil",
+    "type": "project",
+    "require": {
+        "php": ">=7.4"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}

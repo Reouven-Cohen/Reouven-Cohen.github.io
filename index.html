@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assu-Conseil – Courtier en Assurances à Paris</title>
+  <meta name="description" content="Assu-Conseil, courtier en assurances à Paris. Mutuelle senior, TNS, collective, obsèques et assurance prêt. Devis gratuit.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            primary: { 50:'#EEF6FB', 100:'#D4E8F5', 200:'#AACEEA', 300:'#7BACC4', 400:'#50A2D5', 500:'#2E86C1', 600:'#2474AB', 700:'#1B5F8A', 800:'#144A6A', 900:'#0D3450' },
+            accent:  { 100:'#FDE8D0', 200:'#FBCFA0', 400:'#F5A050', 500:'#E8832A', 600:'#CC6F1E' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(80, 162, 213, 0.12), transparent 28%),
+        linear-gradient(180deg, #f7fbfe 0%, #f8fafc 40%, #f4f8fb 100%);
+    }
+    .card-hover {
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 26px 60px -18px rgba(36,116,171,0.18); }
+    .gradient-hero {
+      background:
+        radial-gradient(circle at 12% 18%, rgba(255,255,255,0.16), transparent 24%),
+        radial-gradient(circle at 84% 14%, rgba(232,131,42,0.22), transparent 18%),
+        linear-gradient(135deg, #0d3450 0%, #175b84 48%, #88c6dc 100%);
+    }
+    .nav-link { position: relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#E8832A; transition:width 0.2s; }
+    .nav-link:hover::after { width:100%; }
+    .assurance-showcase {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbfe 52%, #eef6fb 100%);
+      border: 1px solid #dbe9f1;
+      box-shadow: 0 24px 70px -42px rgba(20, 74, 106, 0.35);
+    }
+    .assurance-showcase::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 5px;
+      background: linear-gradient(90deg, #2E86C1 0%, #8cc7de 58%, #E8832A 100%);
+    }
+    .assurance-showcase:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 32px 80px -40px rgba(20, 74, 106, 0.42);
+      border-color: #c5ddea;
+    }
+    .hero-panel {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.08));
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      box-shadow: 0 35px 80px -46px rgba(10, 34, 52, 0.9), inset 0 1px 0 rgba(255,255,255,0.24);
+      backdrop-filter: blur(16px);
+    }
+    .hero-assurance {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.10));
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.18);
+    }
+    .hero-assurance:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 30px -24px rgba(6, 28, 43, 0.95);
+    }
+    .hero-logo-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f1f7fb 100%);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 18px 40px -28px rgba(10, 34, 52, 0.55);
+    }
+    .hero-logo-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 44px -28px rgba(10, 34, 52, 0.62);
+    }
+    .partner-marquee {
+      position: relative;
+      overflow: hidden;
+      max-width: 66rem;
+      margin: 0 auto;
+      padding: 0.25rem;
+    }
+    .partner-marquee::before,
+    .partner-marquee::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 3rem;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .partner-marquee::before {
+      left: 0;
+      background: linear-gradient(90deg, rgba(248, 250, 252, 0.98), rgba(248, 250, 252, 0));
+    }
+    .partner-marquee::after {
+      right: 0;
+      background: linear-gradient(270deg, rgba(248, 250, 252, 0.98), rgba(248, 250, 252, 0));
+    }
+    .partner-track {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      width: max-content;
+      animation: partner-scroll 32s linear infinite;
+    }
+    .partner-marquee:hover .partner-track {
+      animation-play-state: paused;
+    }
+    .partner-link {
+      display: flex;
+      min-width: 9.25rem;
+      min-height: 4.6rem;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 0.95rem;
+      flex-shrink: 0;
+    }
+    @keyframes partner-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    @media (max-width: 640px) {
+      .partner-link {
+        min-width: 8rem;
+        min-height: 4.15rem;
+        padding: 0.6rem 0.8rem;
+      }
+      .partner-marquee::before,
+      .partner-marquee::after {
+        width: 2rem;
+      }
+    }
+    .partner-section-shell {
+      max-width: 72rem;
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(241,247,251,0.98) 100%);
+      border: 1px solid #dbe7f0;
+      box-shadow: 0 20px 54px -40px rgba(20, 74, 106, 0.22);
+    }
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.55rem 0.95rem;
+      border-radius: 999px;
+      background: rgba(46, 134, 193, 0.10);
+      color: #1b5f8a;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+    .section-kicker::before {
+      content: '';
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #2E86C1, #E8832A);
+    }
+    .feature-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f7fbfe 100%);
+      border: 1px solid #e3edf4;
+      box-shadow: 0 20px 60px -42px rgba(20, 74, 106, 0.36);
+    }
+    .feature-card:hover {
+      background: linear-gradient(180deg, #ffffff 0%, #f1f8fd 100%);
+      border-color: #cfdfeb;
+    }
+    .partner-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbfe 100%);
+      border: 1px solid #e4edf4;
+      box-shadow: 0 20px 50px -36px rgba(20, 74, 106, 0.28);
+    }
+    .partner-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 56px -34px rgba(20, 74, 106, 0.34);
+      border-color: #cadeec;
+    }
+    .cta-shell {
+      background: linear-gradient(135deg, rgba(238,246,251,0.96) 0%, rgba(255,255,255,0.96) 48%, rgba(253,232,208,0.92) 100%);
+      border: 1px solid #d9e7f0;
+      box-shadow: 0 30px 70px -42px rgba(20, 74, 106, 0.30);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+
+<div class="bg-primary-800 text-white text-sm py-2 hidden md:block">
+  <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+    <div class="flex items-center gap-6">
+      <a href="tel:0140242020" class="flex items-center gap-2 hover:text-blue-200 transition">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        01.40.24.20.20
+      </a>
+      <a href="mailto:assu.conseil@orange.fr" class="flex items-center gap-2 hover:text-blue-200 transition">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        assu.conseil@orange.fr
+      </a>
+    </div>
+    <div class="flex items-center gap-2 text-blue-200">
+      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      38 rue des Ormeaux, 75020 Paris
+    </div>
+  </div>
+</div>
+
+
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    
+    <a href="index.html">
+      <img src="logo.png" alt="Assu-Conseil – Courtier en Assurances" class="h-11 w-auto">
+    </a>
+
+    
+    <nav class="hidden md:flex items-center gap-7">
+      <a href="index.html" class="nav-link text-slate-700 hover:text-primary-600 font-medium text-sm">Accueil</a>
+      <a href="pages/qui-sommes-nous.html" class="nav-link text-slate-700 hover:text-primary-600 font-medium text-sm">Qui sommes-nous ?</a>
+      <a href="pages/partenaires.html" class="nav-link text-slate-700 hover:text-primary-600 font-medium text-sm">Nos partenaires</a>
+      <a href="tel:0140242020" class="flex items-center gap-2 text-primary-600 font-semibold text-sm border border-primary-200 px-4 py-2 rounded-full hover:bg-primary-50 transition">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        01.40.24.20.20
+      </a>
+      <a href="devis.html" class="bg-accent-500 text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-600 transition shadow-md shadow-accent-200">
+        Devis gratuit
+      </a>
+    </nav>
+
+  </div>
+</header>
+
+
+<section class="gradient-hero text-white py-20 md:py-24 relative overflow-hidden">
+  
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute -top-20 -right-20 w-80 h-80 bg-white/5 rounded-full"></div>
+    <div class="absolute -bottom-10 -left-10 w-60 h-60 bg-white/5 rounded-full"></div>
+    <div class="absolute top-1/2 left-1/2 w-96 h-96 bg-white/3 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="grid gap-6 items-start">
+      <div class="px-1 md:px-2 text-center max-w-4xl mx-auto">
+        <div class="flex items-center justify-center gap-2 text-blue-100/90 text-xs md:text-sm font-semibold uppercase tracking-[0.24em] mb-6">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+          Courtier indépendant depuis près de 30 ans
+        </div>
+        <h1 class="text-4xl md:text-6xl font-black tracking-[-0.04em] mb-6 leading-[0.95]">
+          Comparez votre Mutuelle,
+          <span class="block text-accent-400">vous serez surpris !</span>
+        </h1>
+        <p class="max-w-3xl mx-auto text-base md:text-xl text-blue-100/95 leading-relaxed">
+          En établissant une seule demande nous nous engageons de façon objective à mettre en concurrence nos 10 partenaires et vous trouver la solution la plus adaptée à vos besoins.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="devis.html" class="bg-gradient-to-r from-accent-500 to-accent-400 text-white px-8 py-5 rounded-full text-lg md:text-xl font-bold hover:from-accent-600 hover:to-accent-500 transition shadow-xl shadow-accent-500/30 flex min-w-[240px] items-center justify-center gap-3">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+            Obtenir mon devis
+          </a>
+          <a href="tel:0140242020" class="border-2 border-white/45 bg-white/8 text-white px-8 py-5 rounded-full text-lg md:text-xl font-semibold hover:bg-white/14 transition flex min-w-[240px] items-center justify-center gap-3">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+            Nous appeler
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-panel rounded-[2rem] p-5 md:p-6">
+        <p class="text-sm font-semibold uppercase tracking-[0.25em] text-blue-100/80 mb-4">Nos solutions d'assurance</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+          <a href="pages/mutuelle-senior.html" class="hero-assurance rounded-[1.45rem] min-h-[80px] p-4 transition hover:bg-white/20 text-center flex items-center justify-center">
+            <div class="text-xs sm:text-sm font-bold leading-tight">Mutuelle Senior</div>
+          </a>
+          <a href="pages/mutuelle-tns.html" class="hero-assurance rounded-[1.45rem] min-h-[80px] p-4 transition hover:bg-white/20 text-center flex items-center justify-center">
+            <div class="text-xs sm:text-sm font-bold leading-tight">Mutuelle TNS</div>
+          </a>
+          <a href="pages/mutuelle-collective.html" class="hero-assurance rounded-[1.45rem] min-h-[80px] p-4 transition hover:bg-white/20 text-center flex items-center justify-center">
+            <div class="text-xs sm:text-sm font-bold leading-tight">Mutuelle d'entreprise</div>
+          </a>
+          <a href="pages/assurance-pret.html" class="hero-assurance rounded-[1.45rem] min-h-[80px] p-4 transition hover:bg-white/20 text-center flex items-center justify-center">
+            <div class="text-xs sm:text-sm font-bold leading-tight">Assurance Prêt</div>
+          </a>
+          <a href="pages/protection-obseques.html" class="hero-assurance rounded-[1.45rem] min-h-[80px] p-4 transition hover:bg-white/20 text-center flex items-center justify-center">
+            <div class="text-xs sm:text-sm font-bold leading-tight">Protection Obsèques</div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="py-8 md:py-10">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="partner-section-shell rounded-[1.7rem] p-4 md:p-5">
+      <div class="mb-4 text-center max-w-3xl mx-auto">
+        <p class="section-kicker mb-3 mx-auto">Nos partenaires</p>
+        <h2 class="text-2xl md:text-[2rem] font-black tracking-[-0.03em] text-slate-800">Nos compagnies partenaires</h2>
+        <p class="mt-3 text-sm md:text-base text-slate-500">Nous comparons des assureurs reconnus pour construire un devis clair, lisible et adapté à votre profil.</p>
+      </div>
+      <div class="partner-marquee">
+        <div class="partner-track">
+          <a href="devis.html" class="hero-logo-card partner-link rounded-[1.1rem] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500" aria-label="Demander un devis avec Malakoff Humanis"><img src="logos/malakoff-humanis.png" alt="Malakoff Humanis" class="max-h-12 max-w-[138px] object-contain"></a>
+          <a href="devis.html" class="hero-logo-card partner-link rounded-[1.1rem] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500" aria-label="Demander un devis avec Malakoff Mederic"><img src="logos/malakoff-mederic.jpg" alt="Malakoff Mederic" class="max-h-12 max-w-[138px] object-contain"></a>
+          <a href="devis.html" class="hero-logo-card partner-link rounded-[1.1rem] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500" aria-label="Demander un devis avec April"><img src="logos/april.png" alt="April" class="max-h-12 max-w-[138px] object-contain"></a>
+          <a href="devis.html" class="hero-logo-card partner-link rounded-[1.1rem] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500" aria-label="Demander un devis avec Swiss Life"><img src="logos/swiss-life.png" alt="Swiss Life" class="max-h-12 max-w-[138px] object-contain"></a>
+          <a href="devis.html" class="hero-logo-card partner-link rounded-[1.1rem] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500" aria-label="Demander un devis avec Apicil"><img src="logos/apicil.jpg" alt="Apicil" class="max-h-12 max-w-[138px] object-contain"></a>
+          <a href="devis.html" class="hero-logo-card partner-link rounded-[1.1rem] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500" aria-label="Demander un devis avec Alptis"><img src="logos/alptis.svg" alt="Alptis" class="max-h-12 max-w-[138px] object-contain"></a>
+          <a href="devis.html" class="hero-logo-card partner-link rounded-[1.1rem] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500" aria-label="Demander un devis avec ASAF"><img src="logos/asaf.jpg" alt="ASAF" class="max-h-12 max-w-[138px] object-contain"></a>
+          <a href="devis.html" class="hero-logo-card partner-link rounded-[1.1rem] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500" aria-label="Demander un devis avec ASAF AFPS"><img src="logos/asaf-afps.jpg" alt="ASAF AFPS" class="max-h-12 max-w-[138px] object-contain"></a>
+          <a href="devis.html" class="hero-logo-card partner-link rounded-[1.1rem] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500" aria-label="Demander un devis avec Malakoff Humanis"><img src="logos/malakoff-humanis.png" alt="Malakoff Humanis" class="max-h-12 max-w-[138px] object-contain"></a>
+          <a href="devis.html" class="hero-logo-card partner-link rounded-[1.1rem] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500" aria-label="Demander un devis avec Malakoff Mederic"><img src="logos/malakoff-mederic.jpg" alt="Malakoff Mederic" class="max-h-12 max-w-[138px] object-contain"></a>
+          <a href="devis.html" class="hero-logo-card partner-link rounded-[1.1rem] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500" aria-label="Demander un devis avec April"><img src="logos/april.png" alt="April" class="max-h-12 max-w-[138px] object-contain"></a>
+          <a href="devis.html" class="hero-logo-card partner-link rounded-[1.1rem] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500" aria-label="Demander un devis avec Swiss Life"><img src="logos/swiss-life.png" alt="Swiss Life" class="max-h-12 max-w-[138px] object-contain"></a>
+          <a href="devis.html" class="hero-logo-card partner-link rounded-[1.1rem] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500" aria-label="Demander un devis avec Apicil"><img src="logos/apicil.jpg" alt="Apicil" class="max-h-12 max-w-[138px] object-contain"></a>
+          <a href="devis.html" class="hero-logo-card partner-link rounded-[1.1rem] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500" aria-label="Demander un devis avec Alptis"><img src="logos/alptis.svg" alt="Alptis" class="max-h-12 max-w-[138px] object-contain"></a>
+          <a href="devis.html" class="hero-logo-card partner-link rounded-[1.1rem] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500" aria-label="Demander un devis avec ASAF"><img src="logos/asaf.jpg" alt="ASAF" class="max-h-12 max-w-[138px] object-contain"></a>
+          <a href="devis.html" class="hero-logo-card partner-link rounded-[1.1rem] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500" aria-label="Demander un devis avec ASAF AFPS"><img src="logos/asaf-afps.jpg" alt="ASAF AFPS" class="max-h-12 max-w-[138px] object-contain"></a>
+        </div>
+      </div>
+      <div class="text-center mt-5 pb-2">
+        <a href="pages/partenaires.html" class="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 text-sm font-semibold transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          Découvrir tous nos partenaires →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <p class="section-kicker mb-5 mx-auto">Pourquoi nous choisir</p>
+      <h2 class="text-4xl md:text-[2.7rem] font-black tracking-[-0.03em] text-slate-800 mb-4">Pourquoi choisir Assu-Conseil ?</h2>
+      <p class="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto">Un courtier independant a votre service, avec un seul objectif : repondre a vos besoins avec une recommandation claire.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="feature-card card-hover text-center p-8 rounded-[2rem]">
+        <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
+          <svg class="w-8 h-8 text-primary-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4l5 2.18V11c0 3.34-2.27 6.48-5 7.93-2.73-1.45-5-4.59-5-7.93V7.18L12 5z"/></svg>
+        </div>
+        <h3 class="font-bold text-slate-800 text-xl mb-3">Independant & Impartial</h3>
+        <p class="text-slate-500 leading-relaxed">Pas lie a un seul assureur, nous comparons le marche pour vous trouver la meilleure offre.</p>
+      </div>
+      <div class="feature-card card-hover text-center p-8 rounded-[2rem]">
+        <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
+          <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+        </div>
+        <h3 class="font-bold text-slate-800 text-xl mb-3">Conseil Personnalise</h3>
+        <p class="text-slate-500 leading-relaxed">Chaque situation est unique. Nos experts analysent vos besoins pour vous proposer la solution adaptee.</p>
+      </div>
+      <div class="feature-card card-hover text-center p-8 rounded-[2rem]">
+        <div class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
+          <svg class="w-8 h-8 text-orange-500" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+        </div>
+        <h3 class="font-bold text-slate-800 text-xl mb-3">Devis simple & rapide</h3>
+        <p class="text-slate-500 leading-relaxed">Un parcours allege pour demander votre devis sans perdre de temps et etre recontacte rapidement.</p>
+      </div>
+      <div class="feature-card card-hover text-center p-8 rounded-[2rem]">
+        <div class="w-16 h-16 bg-teal-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
+          <svg class="w-8 h-8 text-teal-600" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </div>
+        <h3 class="font-bold text-slate-800 text-xl mb-3">Contact physique privilégié</h3>
+        <p class="text-slate-500 leading-relaxed">Nous privilégions le contact physique, pour des explications plus claires et un meilleur comparatif.</p>
+      </div>
+      <div class="feature-card card-hover text-center p-8 rounded-[2rem]">
+        <div class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
+          <svg class="w-8 h-8 text-indigo-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18V17h2v-4.5l1 .55V17c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2v-4.95l1-.55V17h2v-5.82L23 9 12 3zm0 2.24L19.08 9 12 12.76 4.92 9 12 5.24zM16 17h-4v-3.5l4 2.18V17z"/></svg>
+        </div>
+        <h3 class="font-bold text-slate-800 text-xl mb-3">Conseil en toute impartialité</h3>
+        <p class="text-slate-500 leading-relaxed">Notre engagement : vous conseiller en toute impartialité. Si la meilleure solution est de conserver votre mutuelle actuelle, c'est exactement ce que nous vous recommanderons.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="bg-slate-900 text-slate-300 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      
+      <div class="md:col-span-1">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="logo.png" alt="Assu-Conseil" class="h-10 w-auto bg-white rounded-lg px-2 py-0.5">
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed mb-4">Votre courtier indépendant à Paris, spécialisé dans la protection santé et la gestion des risques.</p>
+      </div>
+
+      
+      <div>
+        <h4 class="font-semibold text-white mb-4">Nos produits</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="pages/mutuelle-senior.html" class="hover:text-white transition">Mutuelle Senior</a></li>
+          <li><a href="pages/mutuelle-tns.html" class="hover:text-white transition">Mutuelle TNS</a></li>
+          <li><a href="pages/mutuelle-collective.html" class="hover:text-white transition">Mutuelle d'entreprise</a></li>
+          <li><a href="pages/protection-obseques.html" class="hover:text-white transition">Protection Obsèques</a></li>
+          <li><a href="pages/assurance-pret.html" class="hover:text-white transition">Assurance Prêt</a></li>
+        </ul>
+      </div>
+
+      
+      <div>
+        <h4 class="font-semibold text-white mb-4">Informations</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="pages/qui-sommes-nous.html" class="hover:text-white transition">Qui sommes-nous ?</a></li>
+          <li><a href="devis.html" class="hover:text-white transition">Devis gratuit</a></li>
+          <li><a href="pages/mentions-legales.html" class="hover:text-white transition">Mentions Légales</a></li>
+          <li><a href="pages/politique-confidentialite.html" class="hover:text-white transition">Politique de confidentialité</a></li>
+        </ul>
+      </div>
+
+      
+      <div>
+        <h4 class="font-semibold text-white mb-4">Contact</h4>
+        <ul class="space-y-3 text-sm">
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 mt-0.5 text-primary-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+            <a href="tel:0140242020" class="hover:text-white transition">01.40.24.20.20</a>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 mt-0.5 text-primary-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <a href="mailto:assu.conseil@orange.fr" class="hover:text-white transition break-all">assu.conseil@orange.fr</a>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 mt-0.5 text-primary-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <span>38 rue des Ormeaux<br>75020 Paris</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-slate-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+      <p>&copy; 2024 Assu-Conseil. Tous droits réservés.</p>
+      <div class="flex gap-6">
+        <a href="pages/mentions-legales.html" class="hover:text-slate-300 transition">Mentions Légales</a>
+        <a href="pages/politique-confidentialite.html" class="hover:text-slate-300 transition">Confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+
+

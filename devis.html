@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devis gratuit – Assu-Conseil</title>
+  <meta name="description" content="Obtenez votre devis mutuelle gratuit et personnalisé en quelques minutes avec Assu-Conseil, courtier à Paris.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            primary: { 50:'#EEF6FB', 100:'#D4E8F5', 200:'#AACEEA', 300:'#7BACC4', 400:'#50A2D5', 500:'#2E86C1', 600:'#2474AB', 700:'#1B5F8A', 800:'#144A6A', 900:'#0D3450' },
+            accent:  { 100:'#FDE8D0', 200:'#FBCFA0', 400:'#F5A050', 500:'#E8832A', 600:'#CC6F1E' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; background: radial-gradient(circle at top, rgba(80,162,213,0.12), transparent 28%), linear-gradient(180deg,#f7fbfe 0%,#f8fafc 40%,#f4f8fb 100%); }
+    .form-input {
+      width: 100%;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1rem;
+      color: #1e293b;
+      font-size: 0.875rem;
+      background: #ffffff;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .form-input::placeholder { color: #94a3b8; }
+    .form-input:focus {
+      outline: none;
+      border-color: #50A2D5;
+      box-shadow: 0 0 0 4px rgba(80, 162, 213, 0.15);
+    }
+    .form-label {
+      display: block;
+      margin-bottom: 0.375rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #334155;
+    }
+    .radio-btn { display: none; }
+    .radio-label {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.5rem 1.5rem; border-radius: 9999px; border: 2px solid #e2e8f0;
+      font-size: 0.875rem; font-weight: 600; cursor: pointer;
+      transition: all 0.15s ease; color: #64748b;
+    }
+    .radio-btn:checked + .radio-label {
+      background: #2474AB; border-color: #2474AB; color: white;
+    }
+    .produit-card { display: block; }
+    .produit-label {
+      display: flex;
+      min-height: 108px;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      border-radius: 1rem;
+      border: 1px solid #dbeafe;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbfe 100%);
+      padding: 1rem;
+      color: #1e3a5f;
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.35;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      cursor: pointer;
+    }
+    .produit-label:hover {
+      transform: translateY(-2px);
+      border-color: #7BACC4;
+      box-shadow: 0 16px 30px -20px rgba(20, 74, 106, 0.35);
+    }
+    .produit-radio:checked + .produit-label {
+      border-color: #2474AB;
+      background: linear-gradient(180deg, #eff7fc 0%, #dff0fb 100%);
+      box-shadow: 0 18px 35px -22px rgba(36, 116, 171, 0.55);
+      color: #144A6A;
+    }
+    .gradient-hero { background: linear-gradient(135deg, #144A6A 0%, #2474AB 50%, #2E86C1 100%); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+
+<div class="bg-primary-800 text-white text-sm py-2 hidden md:block">
+  <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+    <div class="flex items-center gap-6">
+      <a href="tel:0140242020" class="flex items-center gap-2 hover:text-blue-200 transition">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        01.40.24.20.20
+      </a>
+      <a href="mailto:assu.conseil@orange.fr" class="flex items-center gap-2 hover:text-blue-200 transition">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        assu.conseil@orange.fr
+      </a>
+    </div>
+    <div class="flex items-center gap-2 text-blue-200">
+      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      38 rue des Ormeaux, 75020 Paris
+    </div>
+  </div>
+</div>
+
+
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="logo.png" alt="Assu-Conseil – Courtier en Assurances" class="h-11 w-auto">
+    </a>
+    <nav class="hidden md:flex items-center gap-7">
+      <a href="index.html" class="text-slate-700 hover:text-primary-600 font-medium text-sm">Accueil</a>
+      <a href="pages/qui-sommes-nous.html" class="text-slate-700 hover:text-primary-600 font-medium text-sm">Qui sommes-nous ?</a>
+      <a href="pages/partenaires.html" class="nav-link text-slate-700 hover:text-primary-600 font-medium text-sm">Nos partenaires</a>
+      <a href="tel:0140242020" class="flex items-center gap-2 text-primary-600 font-semibold text-sm border border-primary-200 px-4 py-2 rounded-full hover:bg-primary-50 transition">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        01.40.24.20.20
+      </a>
+    </nav>
+  </div>
+</header>
+
+
+<div class="gradient-hero text-white py-14">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <h1 class="text-3xl md:text-4xl font-extrabold mb-3">Votre devis gratuit & personnalisé</h1>
+    <p class="text-blue-100 text-lg">Choisissez votre assurance, laissez-nous vos coordonnées et nous vous recontactons sous 24h avec une solution claire et adaptée.</p>
+  </div>
+</div>
+
+<div class="max-w-3xl mx-auto px-6 pt-8">
+  <div class="flex items-start gap-4 p-5 bg-primary-50 border border-primary-200 rounded-2xl">
+    <div class="flex-shrink-0 w-10 h-10 bg-primary-100 rounded-xl flex items-center justify-center">
+      <svg class="w-5 h-5 text-primary-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+    </div>
+    <p class="text-sm text-primary-800 font-medium leading-relaxed">
+      Nos conseillers et gestionnaires sont à votre écoute pour un suivi efficace de vos demandes. Ils sont continuellement formés afin de pouvoir vous apporter une information claire, précise et transparente.
+    </p>
+  </div>
+</div>
+
+<section class="max-w-3xl mx-auto px-6 py-16">
+
+  
+  <div id="successMessage" class="hidden bg-green-50 border border-green-200 rounded-2xl p-8 text-center mb-8">
+    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+      <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+    </div>
+    <h3 class="text-xl font-bold text-green-800 mb-2">Demande envoyée avec succès !</h3>
+    <p class="text-green-700">Merci pour votre demande. Un conseiller Assu-Conseil vous contactera très prochainement.</p>
+    <a href="index.html" class="inline-block mt-6 bg-primary-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-primary-700 transition">Retour à l'accueil</a>
+  </div>
+
+  
+  <div id="errorMessage" class="hidden bg-red-50 border border-red-200 rounded-2xl p-6 mb-8">
+    <div class="flex items-center gap-3 text-red-700">
+      <svg class="w-6 h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+      <span id="errorText">Une erreur est survenue. Veuillez réessayer ou nous contacter par téléphone.</span>
+    </div>
+  </div>
+
+  <form id="devisForm" action="https://api.web3forms.com/submit" method="POST" class="bg-white rounded-3xl shadow-sm border border-slate-100 p-8 md:p-10 space-y-8">
+
+      <input type="hidden" name="access_key" value="b3a1eceb-2425-4c86-96f0-df4e9e72935a">
+      <input type="hidden" name="_honeypot" style="display:none" value="">
+      <input type="hidden" name="_subject" value="Nouvelle demande de devis – Assu-Conseil">
+
+
+    <div>
+      <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+        <div class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">1</div>
+        <h2 class="text-lg font-bold text-slate-800">Quel produit vous intéresse ?</h2>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <label class="produit-card">
+          <input type="radio" name="produit" value="mutuelle-senior" class="sr-only produit-radio" required>
+          <div class="produit-label">
+            <svg class="w-5 h-5 mb-1.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402C1 3.5 4 1 7 1c1.868 0 3.739.787 5 2.285C13.261 1.787 15.132 1 17 1c3 0 6 2.5 6 6.191 0 4.105-5.37 8.863-11 14.402z"/></svg>
+            Mutuelle Senior
+          </div>
+        </label>
+        <label class="produit-card">
+          <input type="radio" name="produit" value="mutuelle-tns" class="sr-only produit-radio">
+          <div class="produit-label">
+            <svg class="w-5 h-5 mb-1.5" fill="currentColor" viewBox="0 0 24 24"><path d="M20 7H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm0 12H4V9h16v10zM12 3c-4.42 0-8 3.58-8 8h2c0-3.31 2.69-6 6-6s6 2.69 6 6h2c0-4.42-3.58-8-8-8z"/></svg>
+            Mutuelle TNS
+          </div>
+        </label>
+        <label class="produit-card">
+          <input type="radio" name="produit" value="mutuelle-entreprise" class="sr-only produit-radio">
+          <div class="produit-label">
+            <svg class="w-5 h-5 mb-1.5" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+            Mutuelle d'entreprise
+          </div>
+        </label>
+        <label class="produit-card">
+          <input type="radio" name="produit" value="protection-obseques" class="sr-only produit-radio">
+          <div class="produit-label">
+            <svg class="w-5 h-5 mb-1.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L4 9v12h16V9l-8-6zm0 14l-4-4h3V9h2v4h3l-4 4z"/></svg>
+            Protection Obs&egrave;ques
+          </div>
+        </label>
+        <label class="produit-card">
+          <input type="radio" name="produit" value="assurance-pret" class="sr-only produit-radio">
+          <div class="produit-label">
+            <svg class="w-5 h-5 mb-1.5" fill="currentColor" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+            Assurance Pr&ecirc;t
+          </div>
+        </label>
+      </div>
+      <p class="text-sm text-slate-500 mt-4">Sélectionnez simplement l'assurance qui vous intéresse pour recevoir un devis ciblé.</p>
+      <p id="produitError" class="hidden text-red-500 text-sm mt-3">Veuillez sélectionner un produit.</p>
+    </div>
+
+    
+    <div>
+      <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+        <div class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">2</div>
+        <h2 class="text-lg font-bold text-slate-800">Vos informations de santé</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div id="fieldDateNaissance">
+          <label class="form-label" for="dateNaissance">Date de naissance <span class="text-red-500">*</span></label>
+          <input
+            type="text"
+            id="dateNaissance"
+            name="dateNaissance"
+            class="form-input"
+            placeholder="JJ/MM/AAAA"
+            maxlength="10"
+            required
+          >
+          <p class="text-xs text-slate-400 mt-1.5">Format : JJ/MM/AAAA</p>
+        </div>
+        <div id="fieldAgeMoyen" class="hidden">
+          <label class="form-label" for="ageMoyenSalaries">Âge moyen des salariés <span class="text-red-500">*</span></label>
+          <input
+            type="number"
+            id="ageMoyenSalaries"
+            name="ageMoyenSalaries"
+            class="form-input"
+            placeholder="ex : 38"
+            min="16"
+            max="70"
+          >
+          <p class="text-xs text-slate-400 mt-1.5">Âge moyen en années</p>
+        </div>
+        <div>
+          <label class="form-label" for="regime">Régime <span class="text-red-500">*</span></label>
+          <select id="regime" name="regime" class="form-input cursor-pointer" required>
+            <option value="" disabled selected>Sélectionnez votre régime</option>
+            <option value="Salarié">Salarié</option>
+            <option value="Travailleur non salarié (TNS)">Travailleur non salarié (TNS)</option>
+            <option value="Exploitant agricole">Exploitant agricole</option>
+            <option value="Alsace-Moselle">Alsace-Moselle</option>
+            <option value="Étudiant">Étudiant</option>
+          </select>
+        </div>
+      </div>
+      <div id="fieldsEntreprise" class="hidden mt-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="form-label" for="nomEntreprise">Nom de l'entreprise</label>
+            <input type="text" id="nomEntreprise" name="nomEntreprise" class="form-input" placeholder="Nom de votre entreprise">
+          </div>
+          <div>
+            <label class="form-label" for="nomConventionCollective">Nom de la convention collective</label>
+            <input type="text" id="nomConventionCollective" name="nomConventionCollective" class="form-input" placeholder="ex : Convention collective du commerce de détail">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="sectionConjoint">
+      <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+        <div class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">3</div>
+        <h2 class="text-lg font-bold text-slate-800">Assurer votre conjoint(e) ?</h2>
+      </div>
+
+      <div class="flex gap-3">
+        <div>
+          <input type="radio" name="assureConjoint" id="conjointOui" value="oui" class="radio-btn">
+          <label for="conjointOui" class="radio-label">Oui</label>
+        </div>
+        <div>
+          <input type="radio" name="assureConjoint" id="conjointNon" value="non" class="radio-btn" checked>
+          <label for="conjointNon" class="radio-label">Non</label>
+        </div>
+      </div>
+
+      
+      <div id="conjointFields" class="hidden mt-6 bg-slate-50 rounded-2xl p-6 border border-slate-200">
+        <div class="flex items-center gap-2 mb-5">
+          <svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          <span class="font-semibold text-slate-700">Informations du/de la conjoint(e)</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="form-label" for="dateNaissanceConjoint">Date de naissance du conjoint <span class="text-red-500">*</span></label>
+            <input
+              type="text"
+              id="dateNaissanceConjoint"
+              name="dateNaissanceConjoint"
+              class="form-input"
+              placeholder="JJ/MM/AAAA"
+              maxlength="10"
+            >
+            <p class="text-xs text-slate-400 mt-1.5">Format : JJ/MM/AAAA</p>
+          </div>
+          <div>
+            <label class="form-label" for="regimeConjoint">Régime du conjoint <span class="text-red-500">*</span></label>
+            <select id="regimeConjoint" name="regimeConjoint" class="form-input cursor-pointer">
+              <option value="" disabled selected>Sélectionnez le régime</option>
+              <option value="Salarié">Salarié</option>
+              <option value="Travailleur non salarié (TNS)">Travailleur non salarié (TNS)</option>
+              <option value="Exploitant agricole">Exploitant agricole</option>
+              <option value="Alsace-Moselle">Alsace-Moselle</option>
+              <option value="Étudiant">Étudiant</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div id="sectionEnfants">
+      <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+        <div class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">4</div>
+        <h2 class="text-lg font-bold text-slate-800">Assurer vos enfants ?</h2>
+      </div>
+
+      <div class="flex gap-3">
+        <div>
+          <input type="radio" name="assureEnfants" id="enfantOui" value="oui" class="radio-btn">
+          <label for="enfantOui" class="radio-label">Oui</label>
+        </div>
+        <div>
+          <input type="radio" name="assureEnfants" id="enfantNon" value="non" class="radio-btn" checked>
+          <label for="enfantNon" class="radio-label">Non</label>
+        </div>
+      </div>
+
+
+      <div id="enfantFields" class="hidden mt-6 bg-slate-50 rounded-2xl p-6 border border-slate-200">
+        <div class="flex items-center gap-2 mb-5">
+          <svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v1h16v-1c0-2.66-5.33-4-8-4z"/></svg>
+          <span class="font-semibold text-slate-700">Nombre d'enfants à assurer</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-end">
+          <div>
+            <label class="form-label" for="nombreEnfants">Nombre d'enfants <span class="text-red-500">*</span></label>
+            <select id="nombreEnfants" name="nombreEnfants" class="form-input cursor-pointer">
+              <option value="" selected disabled>Sélectionnez un nombre</option>
+              <option value="1">1 enfant</option>
+              <option value="2">2 enfants</option>
+              <option value="3">3 enfants</option>
+              <option value="4">4 enfants</option>
+              <option value="5">5 enfants</option>
+              <option value="6+">6 enfants ou plus</option>
+            </select>
+          </div>
+          <p class="text-sm text-slate-500">Nous n'avons pas besoin de l'âge des enfants pour cette première demande.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="sectionNombreSalaries" class="hidden">
+      <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+        <div class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">4</div>
+        <h2 class="text-lg font-bold text-slate-800">Nombre de salariés</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="form-label" for="nombreSalaries">Nombre de salariés <span class="text-red-500">*</span></label>
+          <input
+            type="number"
+            id="nombreSalaries"
+            name="nombreSalaries"
+            class="form-input"
+            placeholder="ex : 10"
+            min="1"
+          >
+        </div>
+      </div>
+    </div>
+
+
+    <div id="sectionCapitalObseques" class="hidden">
+      <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+        <div class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">+</div>
+        <h2 class="text-lg font-bold text-slate-800">Capital obsèques</h2>
+      </div>
+      <div>
+        <label class="form-label" for="montantCapital">Montant du capital souhaité</label>
+        <input type="text" id="montantCapital" name="montantCapital" class="form-input" placeholder="ex : 5 000 €">
+        <p class="text-xs text-slate-400 mt-1.5">Montant que vous souhaitez prévoir pour vos obsèques</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+        <div class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">5</div>
+        <h2 class="text-lg font-bold text-slate-800">Vos coordonnées</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="form-label" for="prenom">Prénom <span class="text-red-500">*</span></label>
+          <input type="text" id="prenom" name="prenom" class="form-input" placeholder="Votre prénom" required>
+        </div>
+        <div>
+          <label class="form-label" for="nom">Nom <span class="text-red-500">*</span></label>
+          <input type="text" id="nom" name="nom" class="form-input" placeholder="Votre nom" required>
+        </div>
+        <div>
+          <label class="form-label" for="codePostal">Code postal <span class="text-red-500">*</span></label>
+          <input type="text" id="codePostal" name="codePostal" class="form-input" placeholder="75001" maxlength="5" required>
+        </div>
+        <div>
+          <label class="form-label" for="telephone">Téléphone <span class="text-red-500">*</span></label>
+          <input type="tel" id="telephone" name="telephone" class="form-input" placeholder="06 12 34 56 78" required>
+        </div>
+        <div class="md:col-span-2">
+          <label class="form-label" for="courriel">Courriel <span class="text-red-500">*</span></label>
+          <input type="email" id="courriel" name="courriel" class="form-input" placeholder="votre@email.fr" required>
+        </div>
+      </div>
+    </div>
+
+
+    <div>
+      <label class="form-label" for="describeBesoins">Décrivez vos besoins <span class="text-slate-400 font-normal text-xs">(optionnel)</span></label>
+      <textarea id="describeBesoins" name="describeBesoins" rows="3" class="form-input" placeholder="Décrivez ici vos besoins ou toute information utile pour votre conseiller..."></textarea>
+    </div>
+
+    <div class="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-200">
+      <input type="checkbox" id="rgpd" name="rgpd_consent" value="Accepté" class="mt-1 w-4 h-4 accent-primary-600 flex-shrink-0 cursor-pointer" required>
+      <label for="rgpd" class="text-xs text-slate-500 cursor-pointer leading-relaxed">
+        J'accepte que mes données soient traitées par Assu Conseil dans le cadre de ma demande de devis. Celles-ci ne seront pas transmises à des tiers sans mon accord. <span class="text-red-500">*</span>
+      </label>
+    </div>
+
+    <button
+      type="submit"
+      id="submitBtn"
+      class="w-full bg-primary-600 text-white py-4 rounded-2xl font-bold text-lg hover:bg-primary-700 transition shadow-lg shadow-primary-200 flex items-center justify-center gap-3 disabled:opacity-60 disabled:cursor-not-allowed"
+    >
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      <span id="submitText">Envoyer ma demande de devis</span>
+      <svg id="spinner" class="hidden w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+      </svg>
+    </button>
+
+    <p class="text-center text-xs text-slate-400">Devis gratuit et sans engagement. Réponse sous 24h.</p>
+  </form>
+
+  
+  <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+    <div class="bg-white rounded-2xl p-5 border border-slate-100 text-center">
+      <svg class="w-8 h-8 text-green-500 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+      <div class="font-semibold text-slate-700 text-sm">100% Gratuit</div>
+      <div class="text-xs text-slate-400">Sans engagement</div>
+    </div>
+    <div class="bg-white rounded-2xl p-5 border border-slate-100 text-center">
+      <svg class="w-8 h-8 text-primary-500 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg>
+      <div class="font-semibold text-slate-700 text-sm">Réponse rapide</div>
+      <div class="text-xs text-slate-400">Sous 24h ouvrées</div>
+    </div>
+    <div class="bg-white rounded-2xl p-5 border border-slate-100 text-center">
+      <svg class="w-8 h-8 text-orange-500 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+      <div class="font-semibold text-slate-700 text-sm">Données sécurisées</div>
+      <div class="text-xs text-slate-400">RGPD conforme</div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="bg-slate-900 text-slate-300 pt-12 pb-8">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+      <div class="col-span-2 md:col-span-1">
+        <div class="font-bold text-white text-lg mb-3">Assu-Conseil</div>
+        <p class="text-slate-400 text-sm leading-relaxed">Courtier indépendant à Paris, spécialisé en protection santé.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white mb-3 text-sm">Produits</h4>
+        <ul class="space-y-1.5 text-sm">
+          <li><a href="pages/mutuelle-senior.html" class="hover:text-white transition">Mutuelle Senior</a></li>
+          <li><a href="pages/mutuelle-tns.html" class="hover:text-white transition">Mutuelle TNS</a></li>
+          <li><a href="pages/mutuelle-collective.html" class="hover:text-white transition">Mutuelle d'entreprise</a></li>
+          <li><a href="pages/assurance-pret.html" class="hover:text-white transition">Assurance Prêt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white mb-3 text-sm">Info</h4>
+        <ul class="space-y-1.5 text-sm">
+          <li><a href="pages/qui-sommes-nous.html" class="hover:text-white transition">Qui sommes-nous ?</a></li>
+          <li><a href="pages/mentions-legales.html" class="hover:text-white transition">Mentions Légales</a></li>
+          <li><a href="pages/politique-confidentialite.html" class="hover:text-white transition">Confidentialité</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white mb-3 text-sm">Contact</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="tel:0140242020" class="hover:text-white transition">01.40.24.20.20</a></li>
+          <li><a href="mailto:assu.conseil@orange.fr" class="hover:text-white transition text-xs break-all">assu.conseil@orange.fr</a></li>
+          <li class="text-xs">38 rue des Ormeaux<br>75020 Paris</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-slate-700 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-slate-500">
+      <p>&copy; 2024 Assu-Conseil. Tous droits réservés.</p>
+      <div class="flex gap-4">
+        <a href="pages/mentions-legales.html" class="hover:text-slate-300 transition">Mentions Légales</a>
+        <a href="pages/politique-confidentialite.html" class="hover:text-slate-300 transition">Confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function formatDateInput(input) {
+  input.addEventListener('input', function() {
+    let v = this.value.replace(/\D/g, '');
+    if (v.length >= 2) v = v.slice(0,2) + '/' + v.slice(2);
+    if (v.length >= 5) v = v.slice(0,5) + '/' + v.slice(5);
+    this.value = v.slice(0, 10);
+  });
+}
+formatDateInput(document.getElementById('dateNaissance'));
+formatDateInput(document.getElementById('dateNaissanceConjoint'));
+
+const radioOui = document.getElementById('conjointOui');
+const radioNon = document.getElementById('conjointNon');
+const conjointFields = document.getElementById('conjointFields');
+const dateNaissanceConjoint = document.getElementById('dateNaissanceConjoint');
+const regimeConjoint = document.getElementById('regimeConjoint');
+const produitRadios = Array.from(document.querySelectorAll('input[name="produit"]'));
+const produitError = document.getElementById('produitError');
+
+function hideProduitError() {
+  produitError.classList.add('hidden');
+}
+
+function preselectProduitFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const produit = params.get('produit');
+  if (!produit) {
+    return;
+  }
+
+  const matchingRadio = produitRadios.find((radio) => radio.value === produit);
+  if (!matchingRadio) {
+    return;
+  }
+
+  matchingRadio.checked = true;
+  hideProduitError();
+}
+
+function updateFormForProduct(produit) {
+  const isEntreprise = produit === 'mutuelle-entreprise';
+  const isObseques = produit === 'protection-obseques';
+
+  const fieldDateNaissance = document.getElementById('fieldDateNaissance');
+  const fieldAgeMoyen = document.getElementById('fieldAgeMoyen');
+  const fieldsEntreprise = document.getElementById('fieldsEntreprise');
+  const sectionConjoint = document.getElementById('sectionConjoint');
+  const sectionCapital = document.getElementById('sectionCapitalObseques');
+  const sectionEnfants = document.getElementById('sectionEnfants');
+  const sectionNombreSalaries = document.getElementById('sectionNombreSalaries');
+  const dateNaissance = document.getElementById('dateNaissance');
+  const ageMoyenSalaries = document.getElementById('ageMoyenSalaries');
+  const nombreSalaries = document.getElementById('nombreSalaries');
+
+  fieldDateNaissance.classList.toggle('hidden', isEntreprise);
+  fieldAgeMoyen.classList.toggle('hidden', !isEntreprise);
+  fieldsEntreprise.classList.toggle('hidden', !isEntreprise);
+  sectionConjoint.classList.toggle('hidden', isEntreprise);
+  sectionCapital.classList.toggle('hidden', !isObseques);
+  sectionEnfants.classList.toggle('hidden', isEntreprise);
+  sectionNombreSalaries.classList.toggle('hidden', !isEntreprise);
+
+  dateNaissance.required = !isEntreprise;
+  ageMoyenSalaries.required = isEntreprise;
+  nombreSalaries.required = isEntreprise;
+}
+
+produitRadios.forEach((radio) => {
+  radio.addEventListener('change', function() {
+    hideProduitError();
+    updateFormForProduct(this.value);
+  });
+});
+
+preselectProduitFromUrl();
+const preselected = document.querySelector('input[name="produit"]:checked');
+if (preselected) updateFormForProduct(preselected.value);
+
+function toggleConjoint() {
+  const show = radioOui.checked;
+  conjointFields.classList.toggle('hidden', !show);
+  dateNaissanceConjoint.required = show;
+  regimeConjoint.required = show;
+}
+
+radioOui.addEventListener('change', toggleConjoint);
+radioNon.addEventListener('change', toggleConjoint);
+
+const enfantOui = document.getElementById('enfantOui');
+const enfantNon = document.getElementById('enfantNon');
+const enfantFields = document.getElementById('enfantFields');
+const nombreEnfants = document.getElementById('nombreEnfants');
+
+function toggleEnfants() {
+  const show = enfantOui.checked;
+  enfantFields.classList.toggle('hidden', !show);
+  nombreEnfants.required = show;
+  if (!show) {
+    nombreEnfants.value = '';
+  }
+}
+
+enfantOui.addEventListener('change', toggleEnfants);
+enfantNon.addEventListener('change', toggleEnfants);
+
+const telEl = document.getElementById('telephone');
+telEl.addEventListener('input', function() {
+  let v = this.value.replace(/\D/g, '').slice(0, 10);
+  this.value = v.replace(/(\d{2})(?=\d)/g, '$1 ').trim();
+  this.setCustomValidity('');
+});
+telEl.addEventListener('blur', function() {
+  const d = this.value.replace(/\D/g, '');
+  if (this.value && d.length !== 10) this.setCustomValidity('Numéro invalide – saisissez 10 chiffres (ex : 06 12 34 56 78).');
+  else this.setCustomValidity('');
+});
+
+const cpEl = document.getElementById('codePostal');
+cpEl.addEventListener('input', function() {
+  this.value = this.value.replace(/\D/g, '').slice(0, 5);
+  this.setCustomValidity('');
+});
+cpEl.addEventListener('blur', function() {
+  if (this.value && this.value.length !== 5) this.setCustomValidity('Le code postal doit contenir exactement 5 chiffres.');
+  else this.setCustomValidity('');
+});
+
+const emailEl = document.getElementById('courriel');
+emailEl.addEventListener('blur', function() {
+  if (this.value && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(this.value)) this.setCustomValidity('Format incorrect – saisissez une adresse valide, ex : prenom@domaine.fr');
+  else this.setCustomValidity('');
+});
+emailEl.addEventListener('input', function() { this.setCustomValidity(''); });
+
+function isValidDate(str) {
+  const re = /^(\d{2})\/(\d{2})\/(\d{4})$/;
+  if (!re.test(str)) return false;
+  const [, d, m, y] = str.match(re).map(Number);
+  if (m < 1 || m > 12) return false;
+  if (d < 1 || d > 31) return false;
+  if (y < 1900 || y > new Date().getFullYear()) return false;
+  return true;
+}
+
+
+document.getElementById('devisForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const submitBtn = document.getElementById('submitBtn');
+  const submitText = document.getElementById('submitText');
+  const spinner = document.getElementById('spinner');
+  const errorMessage = document.getElementById('errorMessage');
+  const errorText = document.getElementById('errorText');
+  const successMessage = document.getElementById('successMessage');
+  const selectedProduit = document.querySelector('input[name="produit"]:checked');
+
+  if (!selectedProduit) {
+    hideProduitError();
+    produitError.classList.remove('hidden');
+    produitError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+
+  hideProduitError();
+
+  if (!this.reportValidity()) {
+    return;
+  }
+
+  const isEntreprise = selectedProduit.value === 'mutuelle-entreprise';
+  if (!isEntreprise) {
+    const dn = document.getElementById('dateNaissance').value;
+    if (!isValidDate(dn)) {
+      errorText.textContent = 'Veuillez entrer une date de naissance valide au format JJ/MM/AAAA.';
+      errorMessage.classList.remove('hidden');
+      document.getElementById('dateNaissance').focus();
+      return;
+    }
+  }
+
+  if (!isEntreprise && radioOui.checked) {
+    const dnc = document.getElementById('dateNaissanceConjoint').value;
+    if (!isValidDate(dnc)) {
+      errorText.textContent = 'Veuillez entrer une date de naissance valide pour le conjoint (JJ/MM/AAAA).';
+      errorMessage.classList.remove('hidden');
+      document.getElementById('dateNaissanceConjoint').focus();
+      return;
+    }
+  }
+
+  if (!isEntreprise && enfantOui.checked && !nombreEnfants.value) {
+    errorText.textContent = ‘Veuillez sélectionner le nombre d’enfants à assurer.’;
+    errorMessage.classList.remove(‘hidden’);
+    nombreEnfants.focus();
+    return;
+  }
+
+  errorMessage.classList.add('hidden');
+  submitBtn.disabled = true;
+  submitText.textContent = 'Envoi en cours...';
+  spinner.classList.remove('hidden');
+
+  const formData = new FormData(this);
+  const serviceUrl = this.action;
+
+  try {
+    const response = await fetch(serviceUrl, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json'
+      },
+      body: formData
+    });
+
+    if (response.ok) {
+      this.classList.add('hidden');
+      successMessage.classList.remove('hidden');
+      successMessage.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      const data = await response.json().catch(() => ({}));
+      errorText.textContent = (data && data.error) || 'Une erreur est survenue. Veuillez réessayer.';
+      errorMessage.classList.remove('hidden');
+      errorMessage.scrollIntoView({ behavior: 'smooth' });
+    }
+  } catch (err) {
+    errorText.textContent = 'Impossible de contacter le serveur. Veuillez nous appeler au 01.40.24.20.20.';
+    errorMessage.classList.remove('hidden');
+    errorMessage.scrollIntoView({ behavior: 'smooth' });
+  } finally {
+    submitBtn.disabled = false;
+    submitText.textContent = 'Envoyer ma demande de devis';
+    spinner.classList.add('hidden');
+  }
+});
+</script>
+</body>
+</html>
+
+
