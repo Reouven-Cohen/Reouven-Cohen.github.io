@@ -721,8 +721,8 @@ document.getElementById('devisForm').addEventListener('submit', async function(e
   }
 
   if (!isEntreprise && enfantOui.checked && !nombreEnfants.value) {
-    errorText.textContent = ‘Veuillez sélectionner le nombre d’enfants à assurer.’;
-    errorMessage.classList.remove(‘hidden’);
+    errorText.textContent = 'Veuillez sélectionner le nombre d\'enfants à assurer.';
+    errorMessage.classList.remove('hidden');
     nombreEnfants.focus();
     return;
   }
