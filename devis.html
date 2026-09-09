@@ -572,6 +572,8 @@ function preselectProduitFromUrl() {
 function updateFormForProduct(produit) {
   const isEntreprise = produit === 'mutuelle-entreprise';
   const isObseques = produit === 'protection-obseques';
+  const isAssurancePret = produit === 'assurance-pret';
+  const hideConjointEnfants = isEntreprise || isObseques || isAssurancePret;
 
   const fieldDateNaissance = document.getElementById('fieldDateNaissance');
   const fieldAgeMoyen = document.getElementById('fieldAgeMoyen');
@@ -587,14 +589,21 @@ function updateFormForProduct(produit) {
   fieldDateNaissance.classList.toggle('hidden', isEntreprise);
   fieldAgeMoyen.classList.toggle('hidden', !isEntreprise);
   fieldsEntreprise.classList.toggle('hidden', !isEntreprise);
-  sectionConjoint.classList.toggle('hidden', isEntreprise);
+  sectionConjoint.classList.toggle('hidden', hideConjointEnfants);
   sectionCapital.classList.toggle('hidden', !isObseques);
-  sectionEnfants.classList.toggle('hidden', isEntreprise);
+  sectionEnfants.classList.toggle('hidden', hideConjointEnfants);
   sectionNombreSalaries.classList.toggle('hidden', !isEntreprise);
 
   dateNaissance.required = !isEntreprise;
   ageMoyenSalaries.required = isEntreprise;
   nombreSalaries.required = isEntreprise;
+
+  if (hideConjointEnfants) {
+    radioNon.checked = true;
+    toggleConjoint();
+    enfantNon.checked = true;
+    toggleEnfants();
+  }
 }
 
 produitRadios.forEach((radio) => {
@@ -605,8 +614,6 @@ produitRadios.forEach((radio) => {
 });
 
 preselectProduitFromUrl();
-const preselected = document.querySelector('input[name="produit"]:checked');
-if (preselected) updateFormForProduct(preselected.value);
 
 function toggleConjoint() {
   const show = radioOui.checked;
@@ -634,6 +641,9 @@ function toggleEnfants() {
 
 enfantOui.addEventListener('change', toggleEnfants);
 enfantNon.addEventListener('change', toggleEnfants);
+
+const preselected = document.querySelector('input[name="produit"]:checked');
+if (preselected) updateFormForProduct(preselected.value);
 
 const telEl = document.getElementById('telephone');
 telEl.addEventListener('input', function() {
