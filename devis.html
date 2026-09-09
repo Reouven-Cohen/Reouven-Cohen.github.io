@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Devis gratuit – Assu-Conseil</title>
   <meta name="description" content="Obtenez votre devis mutuelle gratuit et personnalisé en quelques minutes avec Assu-Conseil, courtier à Paris.">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17878035895"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-17878035895');
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <script>
@@ -759,6 +768,7 @@ document.getElementById('devisForm').addEventListener('submit', async function(e
       this.classList.add('hidden');
       successMessage.classList.remove('hidden');
       successMessage.scrollIntoView({ behavior: 'smooth' });
+      gtag('event', 'conversion', { 'send_to': 'AW-17878035895' });
     } else {
       const data = await response.json().catch(() => ({}));
       errorText.textContent = (data && data.error) || 'Une erreur est survenue. Veuillez réessayer.';

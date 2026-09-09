@@ -27,8 +27,8 @@
     banner.innerHTML =
       '<div class="max-w-4xl mx-auto bg-white border border-slate-200 shadow-xl rounded-2xl p-5 md:p-6 flex flex-col md:flex-row items-start md:items-center gap-4">' +
         '<p class="text-sm text-slate-600 leading-relaxed flex-1">' +
-          'Nous utilisons uniquement des cookies techniques strictement nécessaires au bon fonctionnement du site (navigation, sécurité, formulaire de devis). ' +
-          'Aucun cookie de mesure d\'audience ni publicitaire n\'est utilisé. ' +
+          'Nous utilisons des cookies pour assurer le bon fonctionnement du site, mesurer notre audience et améliorer nos campagnes publicitaires. ' +
+          'En poursuivant votre navigation, vous acceptez leur utilisation. ' +
           '<a href="' + POLICY_URL + '" class="text-primary-600 hover:underline">En savoir plus</a>.' +
         '</p>' +
         '<div class="flex items-center gap-3 flex-shrink-0">' +
@@ -66,7 +66,13 @@
           '</div>' +
           '<p class="text-xs text-slate-500 leading-relaxed">Indispensables au fonctionnement du site : navigation entre les pages, sécurité, envoi du formulaire de devis. Ils ne peuvent pas être désactivés.</p>' +
         '</div>' +
-        '<p class="text-xs text-slate-500 leading-relaxed mb-6">Aucun cookie de mesure d\'audience, publicitaire ou de réseau social n\'est déposé sur ce site.</p>' +
+        '<div class="border border-slate-200 rounded-xl p-4 mb-6">' +
+          '<div class="flex items-center justify-between mb-1">' +
+            '<span class="font-semibold text-slate-800 text-sm">Cookies de mesure et publicitaires</span>' +
+            '<span class="text-xs font-semibold text-primary-600">Actifs</span>' +
+          '</div>' +
+          '<p class="text-xs text-slate-500 leading-relaxed">Utilisés pour mesurer l\'audience du site et suivre l\'efficacité de nos campagnes publicitaires (Google Ads).</p>' +
+        '</div>' +
         '<div class="flex items-center justify-between gap-3">' +
           '<a href="' + POLICY_URL + '" class="text-sm text-primary-600 hover:underline">Politique de confidentialité</a>' +
           '<button type="button" id="cookie-modal-close" class="bg-primary-600 text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-primary-700 transition">Fermer</button>' +

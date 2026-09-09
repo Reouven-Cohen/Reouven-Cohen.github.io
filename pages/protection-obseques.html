@@ -3,6 +3,15 @@
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Protection Obsèques – Assu-Conseil</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17878035895"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-17878035895');
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <script>
@@ -312,7 +321,7 @@
     btn.disabled=true;btnText.textContent='Envoi en cours...';spinner.classList.remove('hidden');
     try{
       var resp=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
-      if(resp.ok){form.classList.add('hidden');successEl.classList.remove('hidden');successEl.scrollIntoView({behavior:'smooth'});}
+      if(resp.ok){form.classList.add('hidden');successEl.classList.remove('hidden');successEl.scrollIntoView({behavior:'smooth'});gtag('event','conversion',{'send_to':'AW-17878035895'});}
       else{var d=await resp.json().catch(function(){return{};});errorText.textContent=(d&&d.error)||'Une erreur est survenue. Veuillez réessayer ou appeler le 01.40.24.20.20.';errorEl.classList.remove('hidden');}
     }catch(err){errorText.textContent='Impossible d\'envoyer le formulaire. Veuillez nous appeler au 01.40.24.20.20.';errorEl.classList.remove('hidden');}
     finally{btn.disabled=false;btnText.textContent='Envoyer ma demande de devis';spinner.classList.add('hidden');}
