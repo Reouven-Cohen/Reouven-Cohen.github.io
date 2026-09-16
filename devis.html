@@ -212,6 +212,13 @@
             Assurance Pr&ecirc;t
           </div>
         </label>
+        <label class="produit-card">
+          <input type="radio" name="produit" value="assurance-animaux" class="sr-only produit-radio">
+          <div class="produit-label">
+            <svg class="w-5 h-5 mb-1.5" fill="currentColor" viewBox="0 0 24 24"><path d="M4.5 9.5C5.88 9.5 7 8.38 7 7S5.88 4.5 4.5 4.5 2 5.62 2 7s1.12 2.5 2.5 2.5zM9 5.5C10.38 5.5 11.5 4.38 11.5 3S10.38.5 9 .5 6.5 1.62 6.5 3 7.62 5.5 9 5.5zm6 0c1.38 0 2.5-1.12 2.5-2.5S16.38.5 15 .5s-2.5 1.12-2.5 2.5S13.62 5.5 15 5.5zm4.5 4c1.38 0 2.5-1.12 2.5-2.5S20.88 4.5 19.5 4.5 17 5.62 17 7s1.12 2.5 2.5 2.5zm-4.86 3.73c-.7-1.09-1.61-2.15-2.61-2.15-.99 0-1.9 1.06-2.6 2.15-.71 1.1-1.44 2.24-2.42 2.99-.98.75-2.16 1.28-2.16 2.55C4.85 21.15 6.7 22 8.38 22c1.06 0 2.11-.32 3.12-.32 1.01 0 2.06.32 3.12.32 1.68 0 3.53-.85 3.53-2.73 0-1.27-1.18-1.8-2.16-2.55-.98-.75-1.71-1.89-2.42-2.99z"/></svg>
+            Chien &amp; Chat
+          </div>
+        </label>
       </div>
       <p class="text-sm text-slate-500 mt-4">Sélectionnez simplement l'assurance qui vous intéresse pour recevoir un devis ciblé.</p>
       <p id="produitError" class="hidden text-red-500 text-sm mt-3">Veuillez sélectionner un produit.</p>
@@ -404,6 +411,36 @@
       </div>
     </div>
 
+    <div id="sectionAnimal" class="hidden">
+      <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+        <div class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">+</div>
+        <h2 class="text-lg font-bold text-slate-800">Votre animal</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="md:col-span-2">
+          <label class="form-label">Espèce</label>
+          <div class="flex gap-3">
+            <div>
+              <input type="radio" name="especeAnimal" id="especeChien" value="Chien" class="radio-btn">
+              <label for="especeChien" class="radio-label">Chien</label>
+            </div>
+            <div>
+              <input type="radio" name="especeAnimal" id="especeChat" value="Chat" class="radio-btn">
+              <label for="especeChat" class="radio-label">Chat</label>
+            </div>
+          </div>
+        </div>
+        <div>
+          <label class="form-label" for="nomAnimal">Nom de l'animal</label>
+          <input type="text" id="nomAnimal" name="nomAnimal" class="form-input" placeholder="ex : Rex">
+        </div>
+        <div>
+          <label class="form-label" for="dateNaissanceAnimal">Date de naissance de l'animal</label>
+          <input type="text" id="dateNaissanceAnimal" name="dateNaissanceAnimal" class="form-input" placeholder="JJ/MM/AAAA" maxlength="10">
+        </div>
+      </div>
+    </div>
+
     <div>
       <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
         <div class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">5</div>
@@ -506,7 +543,7 @@
           <li><a href="pages/mutuelle-senior.html" class="hover:text-white transition">Mutuelle Senior</a></li>
           <li><a href="pages/mutuelle-tns.html" class="hover:text-white transition">Mutuelle TNS</a></li>
           <li><a href="pages/mutuelle-collective.html" class="hover:text-white transition">Mutuelle d'entreprise</a></li>
-          <li><a href="pages/assurance-pret.html" class="hover:text-white transition">Assurance Prêt</a></li>
+          <li><a href="pages/assurance-pret.html" class="hover:text-white transition">Assurance Prêt</a></li><li><a href="pages/assurance-animaux.html" class="hover:text-white transition">Assurance Chien & Chat</a></li>
         </ul>
       </div>
       <div>
@@ -547,6 +584,7 @@ function formatDateInput(input) {
 }
 formatDateInput(document.getElementById('dateNaissance'));
 formatDateInput(document.getElementById('dateNaissanceConjoint'));
+formatDateInput(document.getElementById('dateNaissanceAnimal'));
 
 const radioOui = document.getElementById('conjointOui');
 const radioNon = document.getElementById('conjointNon');
@@ -580,28 +618,31 @@ function updateFormForProduct(produit) {
   const isEntreprise = produit === 'mutuelle-entreprise';
   const isObseques = produit === 'protection-obseques';
   const isAssurancePret = produit === 'assurance-pret';
-  const hideConjointEnfants = isEntreprise || isObseques || isAssurancePret;
+  const isAnimaux = produit === 'assurance-animaux';
+  const hideConjointEnfants = isEntreprise || isObseques || isAssurancePret || isAnimaux;
 
   const fieldDateNaissance = document.getElementById('fieldDateNaissance');
   const fieldAgeMoyen = document.getElementById('fieldAgeMoyen');
   const fieldsEntreprise = document.getElementById('fieldsEntreprise');
   const sectionConjoint = document.getElementById('sectionConjoint');
   const sectionCapital = document.getElementById('sectionCapitalObseques');
+  const sectionAnimal = document.getElementById('sectionAnimal');
   const sectionEnfants = document.getElementById('sectionEnfants');
   const sectionNombreSalaries = document.getElementById('sectionNombreSalaries');
   const dateNaissance = document.getElementById('dateNaissance');
   const ageMoyenSalaries = document.getElementById('ageMoyenSalaries');
   const nombreSalaries = document.getElementById('nombreSalaries');
 
-  fieldDateNaissance.classList.toggle('hidden', isEntreprise);
+  fieldDateNaissance.classList.toggle('hidden', isEntreprise || isAnimaux);
   fieldAgeMoyen.classList.toggle('hidden', !isEntreprise);
   fieldsEntreprise.classList.toggle('hidden', !isEntreprise);
   sectionConjoint.classList.toggle('hidden', hideConjointEnfants);
   sectionCapital.classList.toggle('hidden', !isObseques);
+  sectionAnimal.classList.toggle('hidden', !isAnimaux);
   sectionEnfants.classList.toggle('hidden', hideConjointEnfants);
   sectionNombreSalaries.classList.toggle('hidden', !isEntreprise);
 
-  dateNaissance.required = !isEntreprise;
+  dateNaissance.required = !isEntreprise && !isAnimaux;
   ageMoyenSalaries.required = isEntreprise;
   nombreSalaries.required = isEntreprise;
 
@@ -720,12 +761,23 @@ document.getElementById('devisForm').addEventListener('submit', async function(e
   }
 
   const isEntreprise = selectedProduit.value === 'mutuelle-entreprise';
-  if (!isEntreprise) {
+  const isAnimaux = selectedProduit.value === 'assurance-animaux';
+  if (!isEntreprise && !isAnimaux) {
     const dn = document.getElementById('dateNaissance').value;
     if (!isValidDate(dn)) {
       errorText.textContent = 'Veuillez entrer une date de naissance valide au format JJ/MM/AAAA.';
       errorMessage.classList.remove('hidden');
       document.getElementById('dateNaissance').focus();
+      return;
+    }
+  }
+
+  if (isAnimaux) {
+    const dna = document.getElementById('dateNaissanceAnimal').value;
+    if (dna && !isValidDate(dna)) {
+      errorText.textContent = 'Veuillez entrer une date de naissance valide pour votre animal (JJ/MM/AAAA).';
+      errorMessage.classList.remove('hidden');
+      document.getElementById('dateNaissanceAnimal').focus();
       return;
     }
   }
