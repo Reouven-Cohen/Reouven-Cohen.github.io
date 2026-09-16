@@ -824,6 +824,7 @@ document.getElementById('devisForm').addEventListener('submit', async function(e
       successMessage.classList.remove('hidden');
       successMessage.scrollIntoView({ behavior: 'smooth' });
       gtag('event', 'conversion', { 'send_to': 'AW-17878035895' });
+      gtag('event', 'generate_lead');
     } else {
       const data = await response.json().catch(() => ({}));
       errorText.textContent = (data && data.error) || 'Une erreur est survenue. Veuillez réessayer.';
