@@ -1,0 +1,39 @@
+name: Build Tailwind CSS
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.html"
+      - "tailwind.config.js"
+      - "src/tailwind-input.css"
+      - "package.json"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm install
+
+      - run: npm run build:css
+
+      - name: Commit updated CSS if changed
+        run: |
+          if ! git diff --quiet -- css/tailwind.css; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add css/tailwind.css
+            git commit -m "chore: rebuild tailwind.css [skip ci]"
+            git push
+          else
+            echo "No CSS changes, nothing to commit."
+          fi
