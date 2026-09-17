@@ -51,6 +51,46 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.assu-conseil.com/pages/blog.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.assu-conseil.com/pages/blog/mutuelle-responsable.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.assu-conseil.com/pages/blog/optam-non-optam.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.assu-conseil.com/pages/blog/remboursement-protheses-auditives.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.assu-conseil.com/pages/blog/remboursement-orthodontie-enfant.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.assu-conseil.com/pages/blog/remboursement-couronne-dentaire.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.assu-conseil.com/pages/blog/remboursement-implant-dentaire.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.assu-conseil.com/pages/blog/remboursement-medecines-douces.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.assu-conseil.com/pages/partenaires/malakoff-humanis.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
