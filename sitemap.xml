@@ -91,6 +91,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.assu-conseil.com/pages/blog/resiliation-mutuelle.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.assu-conseil.com/pages/partenaires/malakoff-humanis.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>

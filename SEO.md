@@ -24,6 +24,7 @@ Hébergement : GitHub Pages, domaine `https://www.assu-conseil.com` (fichier `CN
 - ID de mesure : `G-38HZVW9KJH`.
 - Ajouté sur les **24 pages** du site. 8 pages avaient déjà le tag Google Ads (`AW-17878035895`) et ont reçu une ligne `gtag('config', 'G-38HZVW9KJH')` en plus. 16 pages (mentions légales, confidentialité, qui-sommes-nous, liste partenaires, 12 fiches partenaires) n'avaient **aucun tag** avant et ont reçu le bloc complet (Ads + GA4).
 - Événement GA4 `generate_lead` ajouté sur les **7 formulaires de devis** du site (`devis.html` + les 6 formulaires intégrés dans mutuelle-senior, mutuelle-tns, mutuelle-collective, assurance-pret, protection-obseques, assurance-animaux), déclenché uniquement quand l'envoi réussit. Testé et confirmé fonctionnel dans le rapport Temps réel.
+- `generate_lead` marqué comme **événement clé** (nouveau nom de "conversion" dans l'interface GA4) le 2026-09-17, dans Admin → Événements. Confirmé fonctionnel en Temps réel (2 déclenchements comptés lors du test).
 
 ### Google Search Console
 - Propriété validée (via la détection automatique du tag `gtag.js` d'Analytics — **ne pas retirer ce tag du site**, sinon la validation Search Console saute).
@@ -57,11 +58,12 @@ Mots-clés complémentaires ajoutés (suggestion Claude, validée par le client)
 
 ## Reste à faire
 
-1. **Marquer `generate_lead` comme conversion dans GA4** : Rapports → Cycle de vie → Engagement → Événements → activer "Marquer comme conversion" en face de `generate_lead`. L'événement doit d'abord apparaître dans ce rapport (délai 24-48h après le premier déclenchement, contrairement au rapport Temps réel qui est instantané).
-2. **Vérifier le statut de la fiche Google Business Profile** (vérifiée ou non).
-3. **Suivre l'indexation dans Search Console** dans les jours/semaines suivants : section "Pages" (indexées vs exclues) et "Performances" (mots-clés, positions).
-4. Pistes moyen terme non abordées : contenu/blog pour le SEO, backlinks, avis clients sur la fiche Google Business Profile.
-5. Idée d'article de blog sur le mot-clé "résiliation mutuelle" (loi Chatel / résiliation infra-annuelle).
+1. **Google Business Profile** : ✅ fiche vérifiée (pastille bleue confirmée le 2026-09-17).
+2. **Search Console** : soumettre le sitemap mis à jour (32 URLs désormais, avec le blog), demander l'indexation manuelle des 7 pages de blog (neuves, pas encore explorées par Google), puis suivre dans les jours/semaines : section "Pages" (indexées vs exclues) et "Performances" (mots-clés, positions). — **en cours**, 2026-09-17.
+3. **Avis clients sur la fiche Google Business Profile** : démarche **en cours** côté client (2026-09-17) pour en solliciter auprès des clients. Impact important sur le SEO local (pack local Google Maps).
+4. **Backlinks** : aucun lien externe pointant vers le site pour l'instant (partenaires, annuaires de courtiers, presse locale...). Piste moyen terme, rien d'entamé.
+5. ✅ **Article de blog "résiliation mutuelle"** publié (`pages/blog/resiliation-mutuelle.html`) — résiliation infra-annuelle, loi Chatel, préavis de 2 mois. Ajouté au sitemap et à la page blog.
+6. **Google Ads** : le compte a le tag de suivi (`AW-17878035895`) et le suivi de conversion configuré, mais aucune campagne n'est active actuellement (mise en veille/supprimée). À décider : relancer des campagnes payantes ou rester en 100% SEO gratuit pour l'instant.
 
 ## Infos techniques de référence
 
