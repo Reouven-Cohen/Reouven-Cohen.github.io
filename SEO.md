@@ -36,12 +36,32 @@ Hébergement : GitHub Pages, domaine `https://www.assu-conseil.com` (fichier `CN
 - Vérifié visuellement (captures d'écran) sur l'accueil, une page produit et une page partenaire imbriquée : rendu identique à l'ancien CDN, aucune classe manquante.
 - `node_modules/` ignoré via `.gitignore` ; `css/tailwind.css` lui est bien commité (c'est un artefact de build nécessaire à GitHub Pages, qui ne fait pas tourner de build lui-même).
 
+### Mots-clés SEO
+Liste de mots-clés fournie par le client, intégrée dans les balises `<title>` / `<meta description>` (+ Open Graph/Twitter miroir) des pages concernées :
+
+| Mot-clé | Page(s) mise(s) à jour |
+|---|---|
+| Comparateur (en) mutuelle | `index.html`, `devis.html` |
+| Devis mutuelle gratuit | `devis.html` (déjà présent, renforcé) |
+| Assurance de prêt | `pages/assurance-pret.html` (déjà présent) |
+| Mutuelle TNS | `pages/mutuelle-tns.html` (déjà présent) |
+| Mutuelle entreprise | `pages/mutuelle-collective.html` |
+| Mutuelle senior | `pages/mutuelle-senior.html` (déjà présent) |
+| Mutuelle responsable | article de blog `pages/blog/mutuelle-responsable.html` |
+
+Mots-clés complémentaires ajoutés (suggestion Claude, validée par le client) :
+- **Complémentaire santé** (synonyme à fort volume de "mutuelle") — ajouté dans `index.html`, `mutuelle-senior.html`, `mutuelle-tns.html`, `mutuelle-collective.html`.
+- **Mutuelle pas chère / complémentaire pas chère** — ajouté dans la description de `index.html`.
+- **Courtier assurance Paris 20e** (variante locale) — ajouté dans `pages/qui-sommes-nous.html` et `index.html`.
+- **Résiliation mutuelle** — fort volume de recherche, pas encore présent sur le site. Piste à traiter via un futur article de blog plutôt qu'un ajout forcé dans une page existante (voir "Reste à faire").
+
 ## Reste à faire
 
 1. **Marquer `generate_lead` comme conversion dans GA4** : Rapports → Cycle de vie → Engagement → Événements → activer "Marquer comme conversion" en face de `generate_lead`. L'événement doit d'abord apparaître dans ce rapport (délai 24-48h après le premier déclenchement, contrairement au rapport Temps réel qui est instantané).
 2. **Vérifier le statut de la fiche Google Business Profile** (vérifiée ou non).
 3. **Suivre l'indexation dans Search Console** dans les jours/semaines suivants : section "Pages" (indexées vs exclues) et "Performances" (mots-clés, positions).
 4. Pistes moyen terme non abordées : contenu/blog pour le SEO, backlinks, avis clients sur la fiche Google Business Profile.
+5. Idée d'article de blog sur le mot-clé "résiliation mutuelle" (loi Chatel / résiliation infra-annuelle).
 
 ## Infos techniques de référence
 
