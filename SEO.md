@@ -10,6 +10,8 @@ Hébergement : GitHub Pages, domaine `https://www.assu-conseil.com` (fichier `CN
 - `meta description` ajoutée sur les 7 pages qui n'en avaient pas (assurance-pret, assurance-animaux, mentions-legales, politique-confidentialite, mutuelle-collective, protection-obseques, qui-sommes-nous). Les autres pages en avaient déjà.
 - Balise `<link rel="canonical">` ajoutée sur les 24 pages HTML du site.
 - Données structurées `schema.org` (JSON-LD, type `InsuranceAgency`) ajoutées sur `index.html` : nom, adresse, téléphone, email, logo.
+- Favicon ajouté (absent auparavant, donc pas de logo dans les résultats de recherche/onglets) : `favicon.ico`, `favicon-16x16.png`, `favicon-32x32.png`, `apple-touch-icon.png`, `android-chrome-192x192.png`, `android-chrome-512x512.png` générés à partir du monogramme "A" du logo (`logo.png`), + `site.webmanifest`. Balises `<link rel="icon">` / `apple-touch-icon` / `manifest` ajoutées sur les 24 pages.
+- Balises Open Graph / Twitter Card (`og:title`, `og:description`, `og:image`, `twitter:card`, etc.) ajoutées sur les 24 pages, avec `og:image` pointant vers `logo.png` — améliore l'aperçu du site (logo + titre + description) quand le lien est partagé (réseaux sociaux, messagerie).
 
 ### Nouvelle page produit
 - `pages/assurance-animaux.html` créée (assurance chien/chat) sur le même modèle que les autres pages produit, avec formulaire de devis dédié (espèce, nom, race, sexe, date de naissance, case "tatoué ou pucé" obligatoire).
