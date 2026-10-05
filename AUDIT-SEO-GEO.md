@@ -12,13 +12,15 @@ Note SEO indicative : **7/10** (bases techniques et on-page solides, quelques ti
 
 | # | Action | Pourquoi | Impact | Effort | Concerne |
 |---|---|---|---|---|---|
-| 1 | Raccourcir les 5 titres `<title>` trop longs (listés ci-dessous, le pire fait 103 caractères) | Google tronque l'affichage au-delà de ~60 caractères ; un titre coupé en plein milieu nuit au clic | Fort | Rapide | SEO |
-| 2 | Raccourcir les 7 meta descriptions trop longues sur les pages partenaires (jusqu'à 209 caractères) | Idem, tronquées au-delà de ~155-160 caractères dans le snippet Google | Moyen | Rapide | SEO |
-| 3 | Ajouter un JSON-LD minimal (`Organization` ou `Article`) sur les 12 pages partenaires | Seules pages du site sans aucune donnée structurée ; actuellement invisibles en tant qu'entités pour les IA | Moyen | Moyen | GEO |
+| 1 | ✅ Raccourcir les 5 titres `<title>` trop longs — fait le 5/10/2026 | Google tronque l'affichage au-delà de ~60 caractères ; un titre coupé en plein milieu nuit au clic | Fort | — | SEO |
+| 2 | ✅ Raccourcir les 8 meta descriptions trop longues sur les pages partenaires — fait le 5/10/2026 | Idem, tronquées au-delà de ~155-160 caractères dans le snippet Google | Moyen | — | SEO |
+| 3 | ✅ Ajouter un JSON-LD `Organization` sur les 12 pages partenaires — fait le 5/10/2026 | Seules pages du site sans aucune donnée structurée ; actuellement invisibles en tant qu'entités pour les IA | Moyen | — | GEO |
 | 4 | Lancer soi-même un test PageSpeed Insights (mobile) sur la page d'accueil | L'API publique a renvoyé une erreur 429 (quota) pendant cet audit — la performance n'a **pas pu être mesurée**, à vérifier manuellement sur [pagespeed.web.dev](https://pagespeed.web.dev) | Inconnu tant que non mesuré | Rapide | SEO |
 | 5 | Vérifier/démentir la mention trouvée sur un blog listant les démarchages téléphoniques (détail plus bas) | Un signal de réputation externe négatif, même mineur, pèse sur la confiance — surtout sur un site YMYL | Faible à moyen | Rapide | GEO |
 | 6 | Continuer le travail sur les avis Google / annuaires (point 7 déjà identifié dans `GEO.md`) | Confirmé ici : zéro visibilité du site sur 4 requêtes testées, y compris une requête locale gagnable ("courtier mutuelle Paris 20e") | Fort, long terme | Lourd | SEO + GEO |
 | 7 | Revoir le contenu des 12 pages partenaires pour les différencier un peu plus (actuellement très templatées) | Contenu proche d'une page à l'autre = signal de pages "fines" pour un moteur | Faible | Moyen | SEO |
+
+**Points 1 à 3 corrigés le 5 octobre 2026** : titres raccourcis (ex. médecines douces : 103 → 66 caractères), 8 descriptions partenaires raccourcies sous 160 caractères, JSON-LD `Organization` ajouté sur les 12 pages partenaires (nom, description, logo, `mainEntityOfPage`). Seuls les H1 et le contenu visible des pages n'ont pas été touchés — uniquement les balises `<title>`/meta qui comptent pour l'affichage dans les résultats de recherche. Pas de `sameAs` vers les sites officiels des partenaires (domaines non vérifiés, non ajoutés pour éviter un lien erroné).
 
 ## Détail des constats
 
