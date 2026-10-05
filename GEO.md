@@ -68,35 +68,9 @@ Convention émergente (`/llms.txt` à la racine) : un fichier Markdown qui liste
 - Statut honnête : **aucun moteur ne l'exploite officiellement aujourd'hui**, ni OpenAI, ni Anthropic, ni Google. Coût ≈ 15 minutes, bénéfice spéculatif.
 - À faire quand les points 1-4 sont traités, pas avant.
 
-### 6. Autoriser explicitement les bots IA dans `robots.txt`
+### 6. ✅ Bots IA nommés dans `robots.txt` — fait le 2026-10-05
 
-Le `Allow: /` global suffit techniquement. Mais lister les bots nommément documente le choix et protège d'un blocage accidentel futur :
-
-```
-User-agent: GPTBot
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-SearchBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-```
+`GPTBot`, `OAI-SearchBot`, `ChatGPT-User`, `ClaudeBot`, `Claude-SearchBot`, `PerplexityBot`, `Google-Extended`, `Bingbot` sont maintenant listés explicitement (en plus du `Allow: /` global déjà présent), pour documenter le choix et protéger d'un blocage accidentel futur.
 
 À noter : `GPTBot` sert à l'**entraînement** des modèles, `OAI-SearchBot` à l'**indexation** pour ChatGPT Search. Ce sont les bots de recherche (`OAI-SearchBot`, `Claude-SearchBot`, `PerplexityBot`) qui comptent pour être cité en temps réel.
 
@@ -119,9 +93,11 @@ Aucun outil ne donne de "position" en GEO comme en SEO. Méthode de suivi :
 - **GA4** : créer un segment sur le trafic référent IA (`chatgpt.com`, `perplexity.ai`, `claude.ai`, `copilot.microsoft.com`, `gemini.google.com`). Volume faible mais **taux de conversion typiquement bien supérieur** au trafic SEO classique (l'internaute arrive avec une intention déjà qualifiée par l'IA).
 - **Search Console** : les impressions issues des AI Overviews sont comptées dans les données Web standard, sans distinction — on ne peut pas les isoler. Ne pas chercher à les séparer.
 
-### 9. Ajouter `lastmod` au sitemap
+### 9. ✅ `lastmod` ajouté au sitemap — fait le 2026-10-05
 
-Les 33 URLs du sitemap n'ont aucune balise `<lastmod>` (vérifié). Les crawlers IA s'en servent pour prioriser le recrawl → sans elle, une page mise à jour peut rester citée dans sa version périmée. À générer automatiquement, idéalement dans le workflow GitHub Actions existant (`.github/workflows/build-css.yml`).
+Les 33 URLs ont maintenant une balise `<lastmod>`, basée sur la date du dernier commit git touchant chaque fichier (pas une date arbitraire). Les crawlers IA s'en servent pour prioriser le recrawl.
+
+**Limite à connaître** : ces dates sont figées au 2026-10-05 pour l'instant — elles ne se mettront pas à jour automatiquement au prochain changement de contenu. Pour que `lastmod` reste fiable dans le temps, il faudrait soit le régénérer manuellement à chaque modification de page, soit automatiser ça dans `.github/workflows/build-css.yml` (régénérer le sitemap à partir des dates de commit à chaque push). Non fait pour l'instant — à décider si le volume de mises à jour du site justifie l'automatisation.
 
 ---
 
@@ -133,8 +109,8 @@ Les 33 URLs du sitemap n'ont aucune balise `<lastmod>` (vérifié). Les crawlers
 | 2 | ✅ Blocs FAQ + `FAQPage` sur les 6 pages produit + les 8 articles de blog | — | fait le 2026-10-05 |
 | 3 | Enrichir le JSON-LD `InsuranceAgency` (`sameAs`, ORIAS, `foundingDate`, `hasOfferCatalog`) | faible | ⭐⭐ |
 | 4 | Auteur personne + dates visibles + page "Qui sommes-nous" étoffée | moyen | ⭐⭐ |
-| 9 | `lastmod` dans le sitemap | faible | ⭐ |
-| 6 | Bots IA nommés dans `robots.txt` | faible | ⭐ |
+| 9 | ✅ `lastmod` dans le sitemap | — | fait le 2026-10-05 |
+| 6 | ✅ Bots IA nommés dans `robots.txt` | — | fait le 2026-10-05 |
 | 8 | Suivi mensuel des mentions IA + segment GA4 | faible, récurrent | mesure |
 | 7 | Sources tierces (avis, annuaires, forums, presse) | élevé, continu | ⭐⭐⭐ (long terme) |
 | 5 | `llms.txt` | faible | spéculatif |
