@@ -216,18 +216,51 @@
     "@context": "https://schema.org",
     "@type": "InsuranceAgency",
     "name": "Assu-Conseil",
+    "legalName": "ASSU CONSEIL",
     "description": "Courtier indépendant en assurances à Paris depuis 1998. Mutuelle senior, TNS, collective, obsèques, assurance prêt et assurance animaux.",
     "url": "https://www.assu-conseil.com/",
     "logo": "https://www.assu-conseil.com/logo.png",
     "image": "https://www.assu-conseil.com/logo.png",
     "telephone": "+33140242020",
     "email": "assu.conseil@orange.fr",
+    "foundingDate": "1998",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "38 rue des Ormeaux",
       "postalCode": "75020",
       "addressLocality": "Paris",
       "addressCountry": "FR"
+    },
+    "areaServed": ["Paris", "Île-de-France", "France"],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "identifier": [
+      { "@type": "PropertyValue", "name": "ORIAS", "value": "07002705" },
+      { "@type": "PropertyValue", "name": "RCS", "value": "Paris B414889923" }
+    ],
+    "knowsAbout": [
+      "Mutuelle senior",
+      "Mutuelle TNS",
+      "Mutuelle d'entreprise",
+      "Protection obsèques",
+      "Assurance de prêt immobilier",
+      "Assurance santé animale"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Produits d'assurance Assu-Conseil",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mutuelle Senior", "url": "https://www.assu-conseil.com/pages/mutuelle-senior.html" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mutuelle TNS", "url": "https://www.assu-conseil.com/pages/mutuelle-tns.html" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mutuelle d'entreprise", "url": "https://www.assu-conseil.com/pages/mutuelle-collective.html" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Protection Obsèques", "url": "https://www.assu-conseil.com/pages/protection-obseques.html" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Assurance de prêt immobilier", "url": "https://www.assu-conseil.com/pages/assurance-pret.html" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Assurance Chien & Chat", "url": "https://www.assu-conseil.com/pages/assurance-animaux.html" } }
+      ]
     }
   }
   </script>

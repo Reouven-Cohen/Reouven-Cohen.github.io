@@ -38,20 +38,24 @@ Ces points sont faits et comptent directement pour le GEO :
 
 Classé par rapport impact / effort. Le point 2 est le plus rentable maintenant que le point 1 est fait.
 
-### 3. Enrichir le JSON-LD de l'entité "Assu-Conseil"
+### 3. ✅ JSON-LD de l'entité "Assu-Conseil" enrichi — fait le 2026-10-05
 
 Objectif : que les IA sachent **qui vous êtes** et vous reconnaissent comme une entité réelle et fiable (notion d'*entity recognition*).
 
-Sur `index.html`, compléter le bloc `InsuranceAgency` avec :
-- `sameAs` : liens vers la fiche Google Business Profile, LinkedIn, Pages Jaunes, ORIAS → c'est ce qui **relie** le site à des sources tierces vérifiables.
-- `foundingDate` : `1998` (ancienneté = signal de confiance fort, déjà mis en avant dans la description).
+Ajouté au bloc `InsuranceAgency` sur `index.html` :
+- `identifier` : numéro **ORIAS 07002705** + numéro **RCS Paris B414889923** (trouvés sur `mentions-legales.html`, déjà publics, juste absents des données structurées).
+- `foundingDate` : `1998`.
 - `areaServed` : Paris / Île-de-France / France.
-- `priceRange`, `openingHoursSpecification` (horaires), `geo` (latitude/longitude).
-- `knowsAbout` : liste des domaines d'expertise (mutuelle senior, TNS, collective, obsèques, assurance de prêt, assurance animaux).
-- `hasOfferCatalog` : les 6 produits, chacun en `Service` avec sa page.
-- **Numéro ORIAS** (obligatoire pour un courtier) via `identifier` → signal d'autorité réglementaire que les IA valorisent sur les sujets financiers/assurance (domaine "YMYL" = *Your Money or Your Life*, où les moteurs sont les plus exigeants sur la fiabilité de la source).
+- `openingHoursSpecification` : lundi-vendredi 9h-18h (trouvé sur `qui-sommes-nous.html`).
+- `knowsAbout` : les 6 domaines d'expertise.
+- `hasOfferCatalog` : les 6 produits en `Service`, chacun avec sa page.
+- `legalName` : "ASSU CONSEIL" (dénomination légale sur les mentions légales).
 
-Sur chaque page produit, ajouter un JSON-LD `Service` (nom, description, `provider` → Assu-Conseil, `areaServed`).
+Ajouté aussi un JSON-LD `Service` dédié sur chacune des 6 pages produit (nom, description reprise du `<meta description>` existant, `provider` → Assu-Conseil, `areaServed`).
+
+**Non fait, faute de données disponibles sur le site** (à ne pas inventer) :
+- `sameAs` : liens vers la fiche Google Business Profile, LinkedIn, Pages Jaunes — **aucune de ces URLs n'existe sur le site actuellement**. Il faudrait que le client les fournisse.
+- `geo` (latitude/longitude) et `priceRange` : pas de source fiable sur le site pour ces valeurs sans les inventer.
 
 ### 4. Crédibiliser l'auteur (E-E-A-T)
 
@@ -107,7 +111,7 @@ Les 33 URLs ont maintenant une balise `<lastmod>`, basée sur la date du dernier
 |---|---|---|---|
 | 1 | ✅ Restructurer les 8 articles (réponse d'abord, `<h2>` interrogatifs, listes, tableaux) | — | fait le 2026-10-05 |
 | 2 | ✅ Blocs FAQ + `FAQPage` sur les 6 pages produit + les 8 articles de blog | — | fait le 2026-10-05 |
-| 3 | Enrichir le JSON-LD `InsuranceAgency` (`sameAs`, ORIAS, `foundingDate`, `hasOfferCatalog`) | faible | ⭐⭐ |
+| 3 | ✅ JSON-LD `InsuranceAgency` enrichi (ORIAS, `foundingDate`, `hasOfferCatalog`) + `Service` sur les 6 pages produit | — | fait le 2026-10-05 |
 | 4 | Auteur personne + dates visibles + page "Qui sommes-nous" étoffée | moyen | ⭐⭐ |
 | 9 | ✅ `lastmod` dans le sitemap | — | fait le 2026-10-05 |
 | 6 | ✅ Bots IA nommés dans `robots.txt` | — | fait le 2026-10-05 |
