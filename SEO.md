@@ -59,7 +59,7 @@ Mots-clés complémentaires ajoutés (suggestion Claude, validée par le client)
 ## Reste à faire
 
 1. **Google Business Profile** : ✅ fiche vérifiée (pastille bleue confirmée le 2026-09-17).
-2. **Search Console** : soumettre le sitemap mis à jour (32 URLs désormais, avec le blog), demander l'indexation manuelle des 7 pages de blog (neuves, pas encore explorées par Google), puis suivre dans les jours/semaines : section "Pages" (indexées vs exclues) et "Performances" (mots-clés, positions). — **en cours**, 2026-09-17.
+2. **Search Console** : ✅ sitemap soumis et traité avec succès le 2026-10-05 (33 pages découvertes, confirmé dans l'interface). À soumettre via l'URL complète (`https://www.assu-conseil.com/sitemap.xml`) plutôt que le chemin relatif — la propriété a renvoyé "Adresse de sitemap incorrecte" avec juste `sitemap.xml`. Reste à faire : demander l'indexation manuelle des 8 pages de blog (neuves, pas encore explorées par Google), puis suivre dans les jours/semaines : section "Pages" (indexées vs exclues) et "Performances" (mots-clés, positions).
 3. **Avis clients sur la fiche Google Business Profile** : démarche **en cours** côté client (2026-09-17) pour en solliciter auprès des clients. Impact important sur le SEO local (pack local Google Maps).
 4. **Backlinks** : aucun lien externe pointant vers le site pour l'instant (partenaires, annuaires de courtiers, presse locale...). Piste moyen terme, rien d'entamé.
 5. ✅ **Article de blog "résiliation mutuelle"** publié (`pages/blog/resiliation-mutuelle.html`) — résiliation infra-annuelle, loi Chatel, préavis de 2 mois. Ajouté au sitemap et à la page blog.
