@@ -30,16 +30,13 @@ Ces points sont faits et comptent directement pour le GEO :
 - **8 articles de blog** répondant à des questions précises (OPTAM/non-OPTAM, remboursement couronne dentaire, implant, orthodontie, prothèses auditives, médecines douces, mutuelle responsable, résiliation) → c'est exactement le bon format de départ : une page = une question.
 - ✅ **Les 8 articles restructurés en format "réponse directe"** (2026-10-05) : chaque article commence par une réponse de 2-3 phrases, puis est découpé en `<h2>` formulés comme des questions ("Puis-je résilier à tout moment ?", "Qu'est-ce que l'OPTAM ?"...), avec tableaux comparatifs (paniers dentaires, classes I/II des aides auditives, cas de résiliation) et listes à puces là où il y avait des chiffres à comparer. Aucun fait ajouté — uniquement du contenu existant redécoupé. `dateModified` mis à jour dans le JSON-LD de chaque article.
 - ✅ **FAQ + schema `FAQPage` sur les 6 pages produit** (2026-10-05) : mutuelle-senior, mutuelle-tns, mutuelle-collective, assurance-pret, assurance-animaux, protection-obseques ont chacune une section "Questions fréquentes" (4-5 questions en accordéon `<details>`, sans JS) + le JSON-LD `FAQPage` correspondant. Ces 6 pages n'avaient jusque-là aucune donnée structurée du tout. Toutes les réponses reprennent du contenu déjà présent sur la page (aucun chiffre inventé).
+- ✅ **FAQ + schema `FAQPage` sur les 8 articles de blog** (2026-10-05) : 3 questions complémentaires par article (qui ne répètent pas les `<h2>` déjà dans le corps du texte), même format accordéon + JSON-LD `FAQPage` en plus du `BlogPosting` existant. Toutes les réponses vérifiées chiffre par chiffre contre le contenu déjà présent.
 
 ---
 
 ## Reste à faire
 
 Classé par rapport impact / effort. Le point 2 est le plus rentable maintenant que le point 1 est fait.
-
-### 2. Ajouter des blocs FAQ + schema `FAQPage` sur les 8 articles de blog
-
-Fait sur les 6 pages produit (voir "Déjà acquis"). Reste à faire : la même chose sur les 8 articles de blog (résiliation, mutuelle responsable, OPTAM, couronne/implant/orthodontie/prothèses dentaires et auditives, médecines douces) — 3-4 questions complémentaires par article, qui ne répètent pas les `<h2>` déjà présents dans le corps mais couvrent des questions annexes (ex. "Puis-je changer de mutuelle en cours d'année pour ce motif ?").
 
 ### 3. Enrichir le JSON-LD de l'entité "Assu-Conseil"
 
@@ -133,8 +130,7 @@ Les 33 URLs du sitemap n'ont aucune balise `<lastmod>` (vérifié). Les crawlers
 | # | Action | Effort | Impact |
 |---|---|---|---|
 | 1 | ✅ Restructurer les 8 articles (réponse d'abord, `<h2>` interrogatifs, listes, tableaux) | — | fait le 2026-10-05 |
-| 2a | ✅ Blocs FAQ + `FAQPage` sur les 6 pages produit | — | fait le 2026-10-05 |
-| 2b | Blocs FAQ + `FAQPage` sur les 8 articles de blog | faible | ⭐⭐ |
+| 2 | ✅ Blocs FAQ + `FAQPage` sur les 6 pages produit + les 8 articles de blog | — | fait le 2026-10-05 |
 | 3 | Enrichir le JSON-LD `InsuranceAgency` (`sameAs`, ORIAS, `foundingDate`, `hasOfferCatalog`) | faible | ⭐⭐ |
 | 4 | Auteur personne + dates visibles + page "Qui sommes-nous" étoffée | moyen | ⭐⭐ |
 | 9 | `lastmod` dans le sitemap | faible | ⭐ |
