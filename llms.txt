@@ -1,0 +1,34 @@
+# Assu-Conseil
+
+> Courtier indépendant en assurances à Paris (20e arrondissement) depuis 1998. Comparateur de mutuelles santé et d'assurances de personnes. Immatriculé ORIAS n°07002705.
+
+## Produits
+
+- [Mutuelle Senior](https://www.assu-conseil.com/pages/mutuelle-senior.html): Mutuelle senior et complémentaire santé pour retraités. Couverture dentaire, optique, audiologie.
+- [Mutuelle TNS](https://www.assu-conseil.com/pages/mutuelle-tns.html): Complémentaire santé pour travailleurs non salariés (artisans, commerçants, professions libérales), cotisations déductibles loi Madelin.
+- [Mutuelle d'entreprise](https://www.assu-conseil.com/pages/mutuelle-collective.html): Mutuelle d'entreprise obligatoire (loi ANI) et complémentaire santé collective pour les salariés.
+- [Protection Obsèques](https://www.assu-conseil.com/pages/protection-obseques.html): Assurance obsèques pour préparer et financer ses funérailles à l'avance.
+- [Assurance de prêt immobilier](https://www.assu-conseil.com/pages/assurance-pret.html): Délégation d'assurance emprunteur, économies jusqu'à 40% par rapport au contrat bancaire.
+- [Assurance Chien & Chat](https://www.assu-conseil.com/pages/assurance-animaux.html): Assurance santé animale : frais vétérinaires, hospitalisation, chirurgie.
+- [Devis gratuit](https://www.assu-conseil.com/devis.html): Formulaire de devis gratuit et sans engagement pour tous les produits.
+
+## Blog
+
+- [Comment résilier sa mutuelle santé ?](https://www.assu-conseil.com/pages/blog/resiliation-mutuelle.html): Résiliation infra-annuelle, loi Chatel, préavis de 2 mois.
+- [Mutuelle responsable et 100% Santé](https://www.assu-conseil.com/pages/blog/mutuelle-responsable.html): Ce qu'est un contrat responsable et le dispositif 100% Santé.
+- [Praticien OPTAM ou non-OPTAM](https://www.assu-conseil.com/pages/blog/optam-non-optam.html): Impact de l'adhésion OPTAM d'un médecin sur le remboursement des dépassements d'honoraires.
+- [Remboursement d'une couronne dentaire](https://www.assu-conseil.com/pages/blog/remboursement-couronne-dentaire.html): Panier 100% Santé, tarifs maîtrisés, tarifs libres.
+- [Remboursement d'un implant dentaire](https://www.assu-conseil.com/pages/blog/remboursement-implant-dentaire.html): Pourquoi l'implant n'est pas remboursé par la Sécurité sociale, forfait implantologie.
+- [Remboursement des médecines douces](https://www.assu-conseil.com/pages/blog/remboursement-medecines-douces.html): Ostéopathie, chiropraxie, acupuncture : ce que couvre la mutuelle.
+- [Remboursement de l'orthodontie chez l'enfant](https://www.assu-conseil.com/pages/blog/remboursement-orthodontie-enfant.html): Base de remboursement Sécurité sociale, accord préalable, forfait mutuelle.
+- [Remboursement des prothèses auditives](https://www.assu-conseil.com/pages/blog/remboursement-protheses-auditives.html): Classe I (100% Santé) et classe II, reste à charge, renouvellement.
+
+## À propos
+
+- [Qui sommes-nous ?](https://www.assu-conseil.com/pages/qui-sommes-nous.html): Présentation du cabinet, ancienneté, immatriculation ORIAS.
+- [Nos partenaires](https://www.assu-conseil.com/pages/partenaires.html): Compagnies d'assurance partenaires (Swiss Life, Malakoff Humanis, APRIL, Alptis, etc.).
+
+## Optional
+
+- [Mentions légales](https://www.assu-conseil.com/pages/mentions-legales.html)
+- [Politique de confidentialité](https://www.assu-conseil.com/pages/politique-confidentialite.html)

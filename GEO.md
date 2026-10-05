@@ -65,12 +65,12 @@ Ajouté aussi un JSON-LD `Service` dédié sur chacune des 6 pages produit (nom,
 
 **Reste possible, non fait** : étoffer encore `qui-sommes-nous.html` (photo, nombre de clients précis, détail des compagnies partenaires) — la page a déjà "20+ ans", "100% indépendant" et "des milliers de clients" (formulation déjà présente), donc le gain resterait marginal sans nouvelles infos du client.
 
-### 5. Ajouter un fichier `llms.txt`
+### 5. ✅ `llms.txt` créé — fait le 2026-10-05
 
 Convention émergente (`/llms.txt` à la racine) : un fichier Markdown qui liste les pages du site avec une description courte, pour guider les IA vers le contenu utile.
 
-- Statut honnête : **aucun moteur ne l'exploite officiellement aujourd'hui**, ni OpenAI, ni Anthropic, ni Google. Coût ≈ 15 minutes, bénéfice spéculatif.
-- À faire quand les points 1-4 sont traités, pas avant.
+- Statut honnête, **inchangé par cet ajout** : **aucun moteur ne l'exploite officiellement aujourd'hui**, ni OpenAI, ni Anthropic, ni Google. Fait par précaution (coût ≈ 15 minutes), une fois les points 1-4 traités, pas comme levier principal.
+- Contenu : les 6 produits, les 8 articles de blog, les pages "qui sommes-nous"/"partenaires", en reprenant les descriptions déjà utilisées ailleurs sur le site (aucune nouvelle info inventée).
 
 ### 6. ✅ Bots IA nommés dans `robots.txt` — fait le 2026-10-05
 
@@ -117,7 +117,7 @@ Les 33 URLs ont maintenant une balise `<lastmod>`, basée sur la date du dernier
 | 6 | ✅ Bots IA nommés dans `robots.txt` | — | fait le 2026-10-05 |
 | 8 | Suivi mensuel des mentions IA + segment GA4 | faible, récurrent | mesure |
 | 7 | Sources tierces (avis, annuaires, forums, presse) | élevé, continu | ⭐⭐⭐ (long terme) |
-| 5 | `llms.txt` | faible | spéculatif |
+| 5 | ✅ `llms.txt` | — | fait le 2026-10-05, spéculatif |
 
 ---
 
