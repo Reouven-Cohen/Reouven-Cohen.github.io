@@ -28,32 +28,18 @@ Ces points sont faits et comptent directement pour le GEO :
 - **Site léger** (CSS compilé, 26 Ko, plus de CDN Tailwind) → crawl rapide, pas de timeout.
 - **Google Business Profile vérifié** → source d'identité pour les réponses locales ("courtier assurance Paris 20e").
 - **8 articles de blog** répondant à des questions précises (OPTAM/non-OPTAM, remboursement couronne dentaire, implant, orthodontie, prothèses auditives, médecines douces, mutuelle responsable, résiliation) → c'est exactement le bon format de départ : une page = une question.
+- ✅ **Les 8 articles restructurés en format "réponse directe"** (2026-10-05) : chaque article commence par une réponse de 2-3 phrases, puis est découpé en `<h2>` formulés comme des questions ("Puis-je résilier à tout moment ?", "Qu'est-ce que l'OPTAM ?"...), avec tableaux comparatifs (paniers dentaires, classes I/II des aides auditives, cas de résiliation) et listes à puces là où il y avait des chiffres à comparer. Aucun fait ajouté — uniquement du contenu existant redécoupé. `dateModified` mis à jour dans le JSON-LD de chaque article.
+- ✅ **FAQ + schema `FAQPage` sur les 6 pages produit** (2026-10-05) : mutuelle-senior, mutuelle-tns, mutuelle-collective, assurance-pret, assurance-animaux, protection-obseques ont chacune une section "Questions fréquentes" (4-5 questions en accordéon `<details>`, sans JS) + le JSON-LD `FAQPage` correspondant. Ces 6 pages n'avaient jusque-là aucune donnée structurée du tout. Toutes les réponses reprennent du contenu déjà présent sur la page (aucun chiffre inventé).
 
 ---
 
 ## Reste à faire
 
-Classé par rapport impact / effort. Les points 1 à 4 sont les plus rentables.
+Classé par rapport impact / effort. Le point 2 est le plus rentable maintenant que le point 1 est fait.
 
-### 1. Restructurer les articles en format "réponse directe" ⭐ priorité
+### 2. Ajouter des blocs FAQ + schema `FAQPage` sur les 8 articles de blog
 
-**Constat actuel** : les articles de blog font ~400 mots et sont rédigés en **un seul gros paragraphe**, sans sous-titres (`resiliation-mutuelle.html` : 1 `<h1>`, 1 `<h2>` de call-to-action, aucun `<h3>`, aucune liste).
-
-**Pourquoi c'est bloquant** : une IA ne "lit" pas une page comme un humain, elle la **découpe en passages** (*chunks*) et sélectionne celui qui répond à la question. Un bloc de 400 mots sans structure = un seul chunk flou, difficile à extraire et à citer. Un article découpé en sections avec titres interrogatifs = 5 ou 6 chunks nets, chacun candidat à une citation.
-
-**À faire sur chaque article** :
-- Commencer par une **réponse de 2-3 phrases** juste sous le `<h1>` (format "la réponse d'abord", pas d'intro de mise en contexte). C'est ce bloc qui est repris mot pour mot dans les AI Overviews.
-- Découper le corps en `<h2>` / `<h3>` formulés **comme des questions** ("Puis-je résilier avant un an ?", "Quel préavis respecter ?", "Qui s'occupe des démarches ?").
-- Ajouter des **listes à puces** et au moins un **tableau** quand il y a des chiffres à comparer (les IA extraient très bien les tableaux).
-- Viser **800-1500 mots** par article, avec des **chiffres précis, dates et références de loi** (déjà bien fait : "1er décembre 2020", "loi Chatel", "préavis de 2 mois" → c'est exactement ce qui rend un passage citable).
-
-### 2. Ajouter des blocs FAQ + schema `FAQPage` ⭐ priorité
-
-Aucune page n'a actuellement de JSON-LD `FAQPage` (vérifié : seuls `InsuranceAgency`, `BlogPosting`, `Organization`, `ImageObject` sont présents).
-
-- Ajouter en bas de chaque page produit (mutuelle-senior, mutuelle-tns, mutuelle-collective, assurance-pret, assurance-animaux, protection-obseques) et de chaque article une section **"Questions fréquentes"** : 4 à 6 questions, réponses de 40 à 60 mots chacune.
-- Doubler cette section d'un JSON-LD `FAQPage` (`mainEntity` → `Question` / `acceptedAnswer`).
-- Les questions doivent reprendre **la formulation parlée** des internautes ("c'est quoi une mutuelle responsable ?", "combien coûte une mutuelle senior à 70 ans ?") — les requêtes adressées aux IA sont des phrases complètes, pas des mots-clés.
+Fait sur les 6 pages produit (voir "Déjà acquis"). Reste à faire : la même chose sur les 8 articles de blog (résiliation, mutuelle responsable, OPTAM, couronne/implant/orthodontie/prothèses dentaires et auditives, médecines douces) — 3-4 questions complémentaires par article, qui ne répètent pas les `<h2>` déjà présents dans le corps mais couvrent des questions annexes (ex. "Puis-je changer de mutuelle en cours d'année pour ce motif ?").
 
 ### 3. Enrichir le JSON-LD de l'entité "Assu-Conseil"
 
@@ -146,8 +132,9 @@ Les 33 URLs du sitemap n'ont aucune balise `<lastmod>` (vérifié). Les crawlers
 
 | # | Action | Effort | Impact |
 |---|---|---|---|
-| 1 | Restructurer les 8 articles (réponse d'abord, `<h2>` interrogatifs, listes, tableaux) | élevé | ⭐⭐⭐ |
-| 2 | Blocs FAQ + `FAQPage` sur les 6 pages produit + articles | moyen | ⭐⭐⭐ |
+| 1 | ✅ Restructurer les 8 articles (réponse d'abord, `<h2>` interrogatifs, listes, tableaux) | — | fait le 2026-10-05 |
+| 2a | ✅ Blocs FAQ + `FAQPage` sur les 6 pages produit | — | fait le 2026-10-05 |
+| 2b | Blocs FAQ + `FAQPage` sur les 8 articles de blog | faible | ⭐⭐ |
 | 3 | Enrichir le JSON-LD `InsuranceAgency` (`sameAs`, ORIAS, `foundingDate`, `hasOfferCatalog`) | faible | ⭐⭐ |
 | 4 | Auteur personne + dates visibles + page "Qui sommes-nous" étoffée | moyen | ⭐⭐ |
 | 9 | `lastmod` dans le sitemap | faible | ⭐ |
