@@ -57,13 +57,13 @@ Ajouté aussi un JSON-LD `Service` dédié sur chacune des 6 pages produit (nom,
 - `sameAs` : liens vers la fiche Google Business Profile, LinkedIn, Pages Jaunes — **aucune de ces URLs n'existe sur le site actuellement**. Il faudrait que le client les fournisse.
 - `geo` (latitude/longitude) et `priceRange` : pas de source fiable sur le site pour ces valeurs sans les inventer.
 
-### 4. Crédibiliser l'auteur (E-E-A-T)
+### 4. ✅ Auteur crédibilisé (E-E-A-T) — fait le 2026-10-05
 
-Actuellement `"author": { "@type": "Organization", "name": "Assu-Conseil" }` sur les articles.
+- `"author"` passé de `Organization` à `Person` sur les 8 articles : `{ "@type": "Person", "name": "Didier Cohen", "jobTitle": "Dirigeant d'Assu-Conseil", "worksFor": {...} }`.
+- Ligne visible ajoutée sous le sous-titre de chaque article : "Par Didier Cohen, dirigeant d'Assu-Conseil · Publié le 17 septembre 2026 · Mis à jour le 5 octobre 2026".
+- Numéro ORIAS (07002705) rendu visible sur `qui-sommes-nous.html`, en plus des mentions légales.
 
-- Passer à un **auteur personne** : `"author": { "@type": "Person", "name": "...", "jobTitle": "Courtier en assurances", "worksFor": ... }`.
-- Afficher visiblement sur chaque article : **nom de l'auteur + date de publication + date de mise à jour**. Les IA pondèrent fortement la fraîcheur : un article daté et récemment mis à jour est préféré à un article sans date.
-- Étoffer `qui-sommes-nous.html` en vraie page d'autorité : années d'expérience, ORIAS, nombre de clients, compagnies partenaires, photo. C'est la page que l'IA ira lire pour décider si elle peut vous citer comme source d'expertise.
+**Reste possible, non fait** : étoffer encore `qui-sommes-nous.html` (photo, nombre de clients précis, détail des compagnies partenaires) — la page a déjà "20+ ans", "100% indépendant" et "des milliers de clients" (formulation déjà présente), donc le gain resterait marginal sans nouvelles infos du client.
 
 ### 5. Ajouter un fichier `llms.txt`
 
@@ -112,7 +112,7 @@ Les 33 URLs ont maintenant une balise `<lastmod>`, basée sur la date du dernier
 | 1 | ✅ Restructurer les 8 articles (réponse d'abord, `<h2>` interrogatifs, listes, tableaux) | — | fait le 2026-10-05 |
 | 2 | ✅ Blocs FAQ + `FAQPage` sur les 6 pages produit + les 8 articles de blog | — | fait le 2026-10-05 |
 | 3 | ✅ JSON-LD `InsuranceAgency` enrichi (ORIAS, `foundingDate`, `hasOfferCatalog`) + `Service` sur les 6 pages produit | — | fait le 2026-10-05 |
-| 4 | Auteur personne + dates visibles + page "Qui sommes-nous" étoffée | moyen | ⭐⭐ |
+| 4 | ✅ Auteur personne (Didier Cohen) + dates visibles + ORIAS visible | — | fait le 2026-10-05 |
 | 9 | ✅ `lastmod` dans le sitemap | — | fait le 2026-10-05 |
 | 6 | ✅ Bots IA nommés dans `robots.txt` | — | fait le 2026-10-05 |
 | 8 | Suivi mensuel des mentions IA + segment GA4 | faible, récurrent | mesure |
