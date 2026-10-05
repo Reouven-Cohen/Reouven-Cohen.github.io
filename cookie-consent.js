@@ -29,7 +29,7 @@
         '<p class="text-sm text-slate-600 leading-relaxed flex-1">' +
           'Nous utilisons des cookies pour assurer le bon fonctionnement du site, mesurer notre audience et améliorer nos campagnes publicitaires. ' +
           'En poursuivant votre navigation, vous acceptez leur utilisation. ' +
-          '<a href="' + POLICY_URL + '" class="text-primary-600 hover:underline">En savoir plus</a>.' +
+          '<a href="' + POLICY_URL + '" class="text-primary-600 underline hover:text-primary-800">En savoir plus</a>.' +
         '</p>' +
         '<div class="flex items-center gap-3 flex-shrink-0">' +
           '<button type="button" id="cookie-banner-settings" class="text-sm font-semibold text-slate-600 hover:text-slate-900 transition">Paramètres</button>' +
