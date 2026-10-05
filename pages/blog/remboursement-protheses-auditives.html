@@ -41,6 +41,29 @@
     "dateModified": "2026-10-05"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Puis-je choisir un appareil en classe II pour des raisons esthétiques ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Oui, vous restez libre de choisir un équipement en classe II, mais le reste à charge peut alors être important selon votre niveau de garantie audiologie." }
+      },
+      {
+        "@type": "Question",
+        "name": "La classe I garantit-elle vraiment un reste à charge nul ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Oui, à condition que votre mutuelle soit un contrat responsable respectant le cahier des charges du dispositif 100% Santé." }
+      },
+      {
+        "@type": "Question",
+        "name": "Le prix plafonné de la classe I s'applique-t-il à chaque oreille ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Oui, le tarif plafonné d'environ 950€ s'applique par oreille ; les mêmes règles de remboursement valent donc pour chaque appareil." }
+      }
+    ]
+  }
+  </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17878035895"></script>
   <script>
@@ -59,6 +82,7 @@
   .nav-link { position:relative; }
   .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#E8832A; transition:width .2s; }
   .nav-link:hover::after { width:100%; }
+  summary::-webkit-details-marker{display:none;}
 </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
@@ -165,6 +189,33 @@
     </div>
 
   </article>
+
+  <div class="mt-14">
+    <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800 mb-6">Questions fréquentes</h2>
+    <div class="space-y-4">
+      <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+        <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold text-slate-800 list-none">
+          <span>Puis-je choisir un appareil en classe II pour des raisons esthétiques ?</span>
+          <svg class="w-5 h-5 text-primary-600 flex-shrink-0 transition-transform group-open:rotate-45" fill="currentColor" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </summary>
+        <p class="text-slate-600 leading-relaxed mt-4">Oui, vous restez libre de choisir un équipement en classe II, mais le reste à charge peut alors être important selon votre niveau de garantie audiologie.</p>
+      </details>
+      <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+        <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold text-slate-800 list-none">
+          <span>La classe I garantit-elle vraiment un reste à charge nul ?</span>
+          <svg class="w-5 h-5 text-primary-600 flex-shrink-0 transition-transform group-open:rotate-45" fill="currentColor" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </summary>
+        <p class="text-slate-600 leading-relaxed mt-4">Oui, à condition que votre mutuelle soit un contrat responsable respectant le cahier des charges du dispositif 100% Santé.</p>
+      </details>
+      <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+        <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold text-slate-800 list-none">
+          <span>Le prix plafonné de la classe I s'applique-t-il à chaque oreille ?</span>
+          <svg class="w-5 h-5 text-primary-600 flex-shrink-0 transition-transform group-open:rotate-45" fill="currentColor" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </summary>
+        <p class="text-slate-600 leading-relaxed mt-4">Oui, le tarif plafonné d'environ 950€ s'applique par oreille ; les mêmes règles de remboursement valent donc pour chaque appareil.</p>
+      </details>
+    </div>
+  </div>
 
   <div class="mt-14 rounded-[2.5rem] bg-gradient-to-br from-primary-800 via-primary-700 to-primary-500 px-8 py-10 md:px-12 md:py-12 text-white text-center shadow-2xl shadow-primary-900/20 border border-white/10">
     <h2 class="text-2xl md:text-3xl font-extrabold mb-4">Besoin d'une mutuelle avec un bon forfait auditif ?</h2>

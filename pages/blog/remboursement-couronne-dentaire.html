@@ -41,6 +41,29 @@
     "dateModified": "2026-10-05"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Le devis de mon dentiste doit-il indiquer le panier de soins choisi ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Oui, c'est une obligation réglementaire : le devis doit indiquer à quel panier (100% Santé, tarifs maîtrisés ou tarifs libres) appartient chaque soin proposé." }
+      },
+      {
+        "@type": "Question",
+        "name": "Puis-je choisir librement le panier pour une couronne sur une molaire ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Le choix dépend en partie de la dent concernée : dans le panier 100% Santé, les molaires ne sont par exemple proposées qu'en version métallique. Demandez à votre dentiste un devis détaillé pour chaque option." }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment savoir précisément combien je vais devoir payer ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Envoyez-nous votre devis, nous calculons le remboursement de votre mutuelle et pouvons éventuellement adapter votre garantie." }
+      }
+    ]
+  }
+  </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17878035895"></script>
   <script>
@@ -59,6 +82,7 @@
   .nav-link { position:relative; }
   .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#E8832A; transition:width .2s; }
   .nav-link:hover::after { width:100%; }
+  summary::-webkit-details-marker{display:none;}
 </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
@@ -162,6 +186,33 @@
     </div>
 
   </article>
+
+  <div class="mt-14">
+    <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800 mb-6">Questions fréquentes</h2>
+    <div class="space-y-4">
+      <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+        <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold text-slate-800 list-none">
+          <span>Le devis de mon dentiste doit-il indiquer le panier de soins choisi ?</span>
+          <svg class="w-5 h-5 text-primary-600 flex-shrink-0 transition-transform group-open:rotate-45" fill="currentColor" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </summary>
+        <p class="text-slate-600 leading-relaxed mt-4">Oui, c'est une obligation réglementaire : le devis doit indiquer à quel panier (100% Santé, tarifs maîtrisés ou tarifs libres) appartient chaque soin proposé.</p>
+      </details>
+      <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+        <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold text-slate-800 list-none">
+          <span>Puis-je choisir librement le panier pour une couronne sur une molaire ?</span>
+          <svg class="w-5 h-5 text-primary-600 flex-shrink-0 transition-transform group-open:rotate-45" fill="currentColor" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </summary>
+        <p class="text-slate-600 leading-relaxed mt-4">Le choix dépend en partie de la dent concernée : dans le panier 100% Santé, les molaires ne sont par exemple proposées qu'en version métallique. Demandez à votre dentiste un devis détaillé pour chaque option.</p>
+      </details>
+      <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+        <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold text-slate-800 list-none">
+          <span>Comment savoir précisément combien je vais devoir payer ?</span>
+          <svg class="w-5 h-5 text-primary-600 flex-shrink-0 transition-transform group-open:rotate-45" fill="currentColor" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </summary>
+        <p class="text-slate-600 leading-relaxed mt-4">Envoyez-nous votre devis, nous calculons le remboursement de votre mutuelle et pouvons éventuellement adapter votre garantie.</p>
+      </details>
+    </div>
+  </div>
 
   <div class="mt-14 rounded-[2.5rem] bg-gradient-to-br from-primary-800 via-primary-700 to-primary-500 px-8 py-10 md:px-12 md:py-12 text-white text-center shadow-2xl shadow-primary-900/20 border border-white/10">
     <h2 class="text-2xl md:text-3xl font-extrabold mb-4">Un devis de couronne dentaire à faire vérifier ?</h2>

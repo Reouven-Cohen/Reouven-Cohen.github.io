@@ -41,6 +41,29 @@
     "dateModified": "2026-10-05"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "L'acupuncture est-elle remboursée par la Sécurité sociale ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Oui, mais uniquement si elle est pratiquée par un médecin conventionné — elle est alors remboursée comme une consultation classique." }
+      },
+      {
+        "@type": "Question",
+        "name": "Le forfait médecines douces est-il le même sur tous les contrats ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Non, ce forfait n'existe pas systématiquement et son niveau (nombre de séances, montant par séance) varie fortement d'un contrat à l'autre." }
+      },
+      {
+        "@type": "Question",
+        "name": "Le praticien doit-il remplir une condition particulière pour être remboursé ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Oui, il doit être inscrit à un registre professionnel reconnu, comme le RNCP ou une fédération professionnelle habilitée." }
+      }
+    ]
+  }
+  </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17878035895"></script>
   <script>
@@ -59,6 +82,7 @@
   .nav-link { position:relative; }
   .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#E8832A; transition:width .2s; }
   .nav-link:hover::after { width:100%; }
+  summary::-webkit-details-marker{display:none;}
 </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
@@ -144,6 +168,33 @@
     </div>
 
   </article>
+
+  <div class="mt-14">
+    <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800 mb-6">Questions fréquentes</h2>
+    <div class="space-y-4">
+      <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+        <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold text-slate-800 list-none">
+          <span>L'acupuncture est-elle remboursée par la Sécurité sociale ?</span>
+          <svg class="w-5 h-5 text-primary-600 flex-shrink-0 transition-transform group-open:rotate-45" fill="currentColor" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </summary>
+        <p class="text-slate-600 leading-relaxed mt-4">Oui, mais uniquement si elle est pratiquée par un médecin conventionné — elle est alors remboursée comme une consultation classique.</p>
+      </details>
+      <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+        <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold text-slate-800 list-none">
+          <span>Le forfait médecines douces est-il le même sur tous les contrats ?</span>
+          <svg class="w-5 h-5 text-primary-600 flex-shrink-0 transition-transform group-open:rotate-45" fill="currentColor" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </summary>
+        <p class="text-slate-600 leading-relaxed mt-4">Non, ce forfait n'existe pas systématiquement et son niveau (nombre de séances, montant par séance) varie fortement d'un contrat à l'autre.</p>
+      </details>
+      <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+        <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold text-slate-800 list-none">
+          <span>Le praticien doit-il remplir une condition particulière pour être remboursé ?</span>
+          <svg class="w-5 h-5 text-primary-600 flex-shrink-0 transition-transform group-open:rotate-45" fill="currentColor" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </summary>
+        <p class="text-slate-600 leading-relaxed mt-4">Oui, il doit être inscrit à un registre professionnel reconnu, comme le RNCP ou une fédération professionnelle habilitée.</p>
+      </details>
+    </div>
+  </div>
 
   <div class="mt-14 rounded-[2.5rem] bg-gradient-to-br from-primary-800 via-primary-700 to-primary-500 px-8 py-10 md:px-12 md:py-12 text-white text-center shadow-2xl shadow-primary-900/20 border border-white/10">
     <h2 class="text-2xl md:text-3xl font-extrabold mb-4">Vous consultez régulièrement un ostéopathe ou un acupuncteur ?</h2>

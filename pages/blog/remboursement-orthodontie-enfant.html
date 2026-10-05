@@ -41,6 +41,29 @@
     "dateModified": "2026-10-05"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Un accord préalable est-il nécessaire avant de commencer un traitement d'orthodontie ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Oui, le remboursement par la Sécurité sociale est soumis à un accord préalable de la caisse." }
+      },
+      {
+        "@type": "Question",
+        "name": "Le remboursement par la Sécurité sociale est-il limité dans le temps ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Oui, la prise en charge est limitée à 6 semestres, à raison de 193,50€ par semestre." }
+      },
+      {
+        "@type": "Question",
+        "name": "Le forfait orthodontie de la mutuelle est-il exprimé de la même façon sur tous les contrats ?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Non, il peut être exprimé en pourcentage de la base de remboursement (200%, 300% ou plus) ou en forfait annuel selon les contrats." }
+      }
+    ]
+  }
+  </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17878035895"></script>
   <script>
@@ -59,6 +82,7 @@
   .nav-link { position:relative; }
   .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#E8832A; transition:width .2s; }
   .nav-link:hover::after { width:100%; }
+  summary::-webkit-details-marker{display:none;}
 </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
@@ -140,6 +164,33 @@
     </div>
 
   </article>
+
+  <div class="mt-14">
+    <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800 mb-6">Questions fréquentes</h2>
+    <div class="space-y-4">
+      <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+        <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold text-slate-800 list-none">
+          <span>Un accord préalable est-il nécessaire avant de commencer un traitement d'orthodontie ?</span>
+          <svg class="w-5 h-5 text-primary-600 flex-shrink-0 transition-transform group-open:rotate-45" fill="currentColor" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </summary>
+        <p class="text-slate-600 leading-relaxed mt-4">Oui, le remboursement par la Sécurité sociale est soumis à un accord préalable de la caisse.</p>
+      </details>
+      <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+        <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold text-slate-800 list-none">
+          <span>Le remboursement par la Sécurité sociale est-il limité dans le temps ?</span>
+          <svg class="w-5 h-5 text-primary-600 flex-shrink-0 transition-transform group-open:rotate-45" fill="currentColor" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </summary>
+        <p class="text-slate-600 leading-relaxed mt-4">Oui, la prise en charge est limitée à 6 semestres, à raison de 193,50€ par semestre.</p>
+      </details>
+      <details class="group bg-white rounded-2xl border border-slate-100 shadow-sm p-6">
+        <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold text-slate-800 list-none">
+          <span>Le forfait orthodontie de la mutuelle est-il exprimé de la même façon sur tous les contrats ?</span>
+          <svg class="w-5 h-5 text-primary-600 flex-shrink-0 transition-transform group-open:rotate-45" fill="currentColor" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </summary>
+        <p class="text-slate-600 leading-relaxed mt-4">Non, il peut être exprimé en pourcentage de la base de remboursement (200%, 300% ou plus) ou en forfait annuel selon les contrats.</p>
+      </details>
+    </div>
+  </div>
 
   <div class="mt-14 rounded-[2.5rem] bg-gradient-to-br from-primary-800 via-primary-700 to-primary-500 px-8 py-10 md:px-12 md:py-12 text-white text-center shadow-2xl shadow-primary-900/20 border border-white/10">
     <h2 class="text-2xl md:text-3xl font-extrabold mb-4">Un traitement d'orthodontie prévu pour votre enfant ?</h2>
