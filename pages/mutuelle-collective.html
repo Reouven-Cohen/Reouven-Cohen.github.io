@@ -273,8 +273,9 @@
     <form id="fm-ent" action="https://api.web3forms.com/submit" method="POST" class="bg-white rounded-3xl shadow-sm border border-slate-100 p-8 md:p-10 space-y-8">
 
       <input type="hidden" name="access_key" value="8b2c8a20-16cc-4e60-a5ce-935c28bdba5a">
-      <input type="hidden" name="_honeypot" style="display:none" value="">
-      <input type="hidden" name="_subject" value="Devis Mutuelle Entreprise – Assu-Conseil">
+      <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="from_name" value="Site Assu-Conseil">
+      <input type="hidden" name="subject" value="Devis Mutuelle Entreprise – Assu-Conseil">
       <input type="hidden" name="produit" value="Mutuelle d'entreprise">
 
       <!-- Section 1 : Contact -->
@@ -447,8 +448,9 @@
     btn.disabled=true;btnText.textContent='Envoi en cours...';spinner.classList.remove('hidden');
     try{
       var resp=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
-      if(resp.ok){form.classList.add('hidden');successEl.classList.remove('hidden');successEl.scrollIntoView({behavior:'smooth'});gtag('event','conversion',{'send_to':'AW-17878035895'});gtag('event','generate_lead');}
-      else{var d=await resp.json().catch(function(){return{};});errorText.textContent=(d&&d.error)||'Une erreur est survenue. Veuillez réessayer ou appeler le 01.40.24.20.20.';errorEl.classList.remove('hidden');}
+      var d=await resp.json().catch(function(){return{};});
+      if(resp.ok&&d&&d.success===true){form.classList.add('hidden');successEl.classList.remove('hidden');successEl.scrollIntoView({behavior:'smooth'});gtag('event','conversion',{'send_to':'AW-17878035895'});gtag('event','generate_lead');}
+      else{errorText.textContent=(d&&(d.message||d.error))||'Une erreur est survenue. Veuillez réessayer ou appeler le 01.40.24.20.20.';errorEl.classList.remove('hidden');}
     }catch(err){errorText.textContent='Impossible d\'envoyer le formulaire. Veuillez nous appeler au 01.40.24.20.20.';errorEl.classList.remove('hidden');}
     finally{btn.disabled=false;btnText.textContent='Envoyer ma demande de devis';spinner.classList.add('hidden');}
   });

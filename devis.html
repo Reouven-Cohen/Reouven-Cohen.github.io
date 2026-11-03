@@ -178,8 +178,9 @@
   <form id="devisForm" action="https://api.web3forms.com/submit" method="POST" class="bg-white rounded-3xl shadow-sm border border-slate-100 p-8 md:p-10 space-y-8">
 
       <input type="hidden" name="access_key" value="8b2c8a20-16cc-4e60-a5ce-935c28bdba5a">
-      <input type="hidden" name="_honeypot" style="display:none" value="">
-      <input type="hidden" name="_subject" value="Nouvelle demande de devis – Assu-Conseil">
+      <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="from_name" value="Site Assu-Conseil">
+      <input type="hidden" name="subject" value="Nouvelle demande de devis – Assu-Conseil">
 
 
     <div>
@@ -827,15 +828,15 @@ document.getElementById('devisForm').addEventListener('submit', async function(e
       body: formData
     });
 
-    if (response.ok) {
+    const data = await response.json().catch(() => ({}));
+    if (response.ok && data && data.success === true) {
       this.classList.add('hidden');
       successMessage.classList.remove('hidden');
       successMessage.scrollIntoView({ behavior: 'smooth' });
       gtag('event', 'conversion', { 'send_to': 'AW-17878035895' });
       gtag('event', 'generate_lead');
     } else {
-      const data = await response.json().catch(() => ({}));
-      errorText.textContent = (data && data.error) || 'Une erreur est survenue. Veuillez réessayer.';
+      errorText.textContent = (data && (data.message || data.error)) || 'Une erreur est survenue. Veuillez réessayer.';
       errorMessage.classList.remove('hidden');
       errorMessage.scrollIntoView({ behavior: 'smooth' });
     }
