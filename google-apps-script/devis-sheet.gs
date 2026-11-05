@@ -4,6 +4,9 @@
  * (Executer en tant que : Moi ; Qui a acces : Tout le monde).
  */
 var IGNORER = ['access_key', 'botcheck', 'from_name'];
+var MAX_COLONNES = 60;
+// Noms de champs acceptes : lettres, chiffres, _ et - uniquement (pas de formule possible en en-tete).
+var NOM_VALIDE = /^[A-Za-z0-9_-]{1,40}$/;
 
 function doPost(e) {
   var lock = LockService.getScriptLock();
@@ -19,14 +22,15 @@ function doPost(e) {
       ? sh.getRange(1, 1, 1, sh.getLastColumn()).getValues()[0]
       : ['Date'];
     Object.keys(p).forEach(function (k) {
-      if (IGNORER.indexOf(k) < 0 && entetes.indexOf(k) < 0) entetes.push(k);
+      if (IGNORER.indexOf(k) < 0 && NOM_VALIDE.test(k) && entetes.indexOf(k) < 0 &&
+          entetes.length < MAX_COLONNES) entetes.push(k);
     });
     sh.getRange(1, 1, 1, entetes.length).setValues([entetes]).setFontWeight('bold');
     sh.setFrozenRows(1);
 
     var ligne = entetes.map(function (h) {
       if (h === 'Date') return new Date();
-      var v = p[h] ? p[h].join(', ') : '';
+      var v = p[h] ? p[h].join(', ').slice(0, 5000) : '';
       return v ? "'" + v : '';   // texte brut : garde le 0 des telephones, bloque les formules
     });
     sh.appendRow(ligne);
