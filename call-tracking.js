@@ -34,6 +34,20 @@
       '</a>';
     document.body.appendChild(bar);
     document.body.classList.add('pb-24', 'md:pb-0');
+
+    // Masque le bouton fixe tant qu'un bouton d'appel du haut de page est visible (evite le doublon).
+    var topButtons = document.querySelectorAll('[data-call-location="haut-de-page"]');
+    if (!topButtons.length || !('IntersectionObserver' in window)) return;
+    bar.style.transition = 'transform 0.25s ease';
+    var visible = new Set();
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) visible.add(en.target); else visible.delete(en.target);
+      });
+      bar.style.transform = visible.size ? 'translateY(110%)' : 'translateY(0)';
+      bar.setAttribute('aria-hidden', visible.size ? 'true' : 'false');
+    });
+    topButtons.forEach(function (b) { io.observe(b); });
   }
 
   if (document.readyState === 'loading') {
