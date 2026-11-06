@@ -65,18 +65,30 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://www.googletagmanager.com">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17878035895"></script>
+  <!-- Google tag (gtag.js) + mode de consentement v2 -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('set', 'url_passthrough', true);
+    try {
+      var acc = JSON.parse(localStorage.getItem('ac_cookie_consent'));
+      if (acc && acc.v === 2 && acc.choice === 'granted' && Date.now() - new Date(acc.date).getTime() < 15724800000) {
+        gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' });
+      }
+    } catch (e) {}
     gtag('js', new Date());
-
-    gtag('config', 'AW-17878035895');
     gtag('config', 'AW-436792714');
-
     gtag('config', 'G-38HZVW9KJH');
   </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-436792714"></script>
   <link rel="stylesheet" href="../css/tailwind.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
@@ -478,6 +490,7 @@
   </div>
 </footer>
   <script src="/cookie-consent.js" defer></script>
+  <script src="/call-tracking.js" defer></script>
   <script src="/devis-sheet.js" defer></script>
 </body>
 </html>
