@@ -1,0 +1,76 @@
+/* ===== Styles telephone uniquement (< 768px). Rien ici ne s'applique sur ordinateur. ===== */
+#m-menu, .m-actions { display: none; }
+
+@media (max-width: 767px) {
+  /* --- En-tete compact + menu burger --- */
+  header > div.max-w-7xl { padding: .5rem 1rem; position: relative; }
+  header img.h-11 { height: 2.25rem; }
+  .m-actions { display: flex; align-items: center; gap: .5rem; }
+  .m-devis { background: #E8832A; color: #fff; font-weight: 700; font-size: .8rem; padding: .45rem .9rem; border-radius: 9999px; }
+  #m-burger { width: 2.5rem; height: 2.5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px; border-radius: .6rem; border: 1px solid #e2e8f0; background: #fff; }
+  #m-burger span { display: block; width: 18px; height: 2px; background: #144A6A; border-radius: 2px; transition: transform .2s, opacity .2s; }
+  #m-burger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  #m-burger.is-open span:nth-child(2) { opacity: 0; }
+  #m-burger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  #m-menu:not([hidden]) { display: block; position: absolute; left: 0; right: 0; top: 100%; background: #fff; border-top: 1px solid #f1f5f9; box-shadow: 0 16px 30px -12px rgba(15,23,42,.25); padding: .5rem 1rem 1rem; max-height: calc(100vh - 4rem); overflow-y: auto; }
+  #m-menu .m-group a { display: block; padding: .7rem .25rem; font-weight: 600; color: #1e293b; border-bottom: 1px solid #f1f5f9; }
+  #m-menu .m-title { margin: .9rem 0 .4rem; font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #64748b; }
+  #m-menu .m-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .4rem; }
+  #m-menu .m-grid a { padding: .6rem .7rem; border-radius: .7rem; background: #f1f7fc; color: #144A6A; font-size: .85rem; font-weight: 600; }
+  #m-menu .m-call { display: block; margin-top: .9rem; text-align: center; padding: .75rem; border-radius: 9999px; background: #2474AB; color: #fff; font-weight: 700; }
+
+  /* --- Titres et espacements plus raisonnables --- */
+  .text-6xl { font-size: 2.1rem; }
+  .text-5xl { font-size: 1.9rem; }
+  .text-4xl { font-size: 1.7rem; }
+  .text-3xl { font-size: 1.45rem; }
+  .text-2xl { font-size: 1.25rem; }
+  .text-xl  { font-size: 1.1rem; }
+  .py-24, .py-20 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+  .py-16 { padding-top: 2rem; padding-bottom: 2rem; }
+  .py-14 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+  .py-12 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+  .px-6 { padding-left: 1rem; padding-right: 1rem; }
+  .p-8, .p-10 { padding: 1.25rem; }
+  .mb-16, .mb-14, .mb-12 { margin-bottom: 1.5rem; }
+  .mb-10 { margin-bottom: 1.25rem; }
+  .gap-8 { gap: 1.25rem; }
+  .space-y-8 > :not([hidden]) ~ :not([hidden]) { margin-top: 1.25rem; }
+
+  /* --- Formulaires des pages produit : compacts, 2 champs par ligne --- */
+  form[id^="fm-"] { padding: 1rem .9rem; border-radius: 1.1rem; }
+  form[id^="fm-"] > :not([hidden]) ~ :not([hidden]) { margin-top: 1.1rem; }
+  form[id^="fm-"] .flex.items-center.gap-3.mb-5 { margin-bottom: .6rem; padding-bottom: .4rem; gap: .5rem; }
+  form[id^="fm-"] .flex.items-center.gap-3.mb-5 > span { width: 1.4rem; height: 1.4rem; font-size: .75rem; border-radius: .4rem; }
+  form[id^="fm-"] h3 { font-size: .95rem; line-height: 1.25; }
+  form[id^="fm-"] .grid.grid-cols-1 { grid-template-columns: 1fr 1fr; gap: .6rem; align-items: end; }
+  form[id^="fm-"] .md\:col-span-2 { grid-column: span 2; }
+  form[id^="fm-"] .p-5 { padding: .75rem; }
+  form[id^="fm-"] .mb-4 { margin-bottom: .5rem; }
+  form[id^="fm-"] .p-4.bg-slate-50 { padding: .6rem .7rem; }
+  form[id^="fm-"] textarea { height: 3.6rem; }
+  form[id^="fm-"] button[type="submit"] { padding-top: .8rem; padding-bottom: .8rem; font-size: 1rem; border-radius: .9rem; }
+  .form-input { padding: .55rem .7rem; font-size: 16px; border-radius: .6rem; }
+  select.form-input { padding-right: 1.6rem; text-overflow: ellipsis; }
+  .form-label { font-size: .78rem; margin-bottom: .2rem; line-height: 1.2; }
+  .radio-label { padding: .3rem 1rem; font-size: .8rem; }
+  .flex.gap-3 > div > .radio-label { white-space: nowrap; }
+  /* --- Cartes "Pourquoi nous choisir" : icone a gauche, texte a droite --- */
+  .grid > .text-center:has(> div.mx-auto:first-child > svg) { display: grid; grid-template-columns: 3rem 1fr; column-gap: .9rem; align-items: start; text-align: left; padding: 1rem; }
+  .grid > .text-center:has(> div.mx-auto:first-child > svg) > div:first-child { width: 3rem; height: 3rem; margin: 0; grid-row: span 2; border-radius: .8rem; }
+  .grid > .text-center:has(> div.mx-auto:first-child > svg) h3 { font-size: 1rem; margin-bottom: .2rem; }
+  .grid > .text-center:has(> div.mx-auto:first-child > svg) p { font-size: .85rem; line-height: 1.45; }
+  .feature-card { display: grid; grid-template-columns: 3rem 1fr; column-gap: .9rem; align-items: start; text-align: left; padding: 1rem; border-radius: 1.2rem; }
+  .feature-card > div:first-child { width: 3rem; height: 3rem; margin: 0; grid-row: span 2; border-radius: .8rem; }
+  .feature-card > div:first-child svg { width: 1.5rem; height: 1.5rem; }
+  .feature-card h3 { font-size: 1rem; margin-bottom: .2rem; }
+  .feature-card p { font-size: .85rem; line-height: 1.45; }
+  .text-lg { font-size: 1rem; }
+
+  /* --- Bandeau cookies plus discret --- */
+  #cookie-banner { padding: .5rem; }
+  #cookie-banner > div { padding: .8rem .9rem; gap: .6rem; border-radius: 1rem; }
+  #cookie-banner p { font-size: .74rem; line-height: 1.4; }
+  #cookie-banner button { font-size: .8rem; padding-top: .45rem; padding-bottom: .45rem; }
+}
+
